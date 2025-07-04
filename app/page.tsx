@@ -21,6 +21,9 @@ import {
   Award,
   Users,
   Heart,
+  Utensils,
+  Ambulance,
+  Church,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -48,18 +51,25 @@ import HospitalSection from "@/components/modisection";
 
 const services = [
   {
-    title: "Instant Video Consultation",
-    subtitle: "Connect within 60 secs",
-    icon: Video,
-    bgColor: "bg-gradient-to-br from-yellow-300 to-yellow-400",
-    iconColor: "text-yellow-700",
+    title: "Place of Worship ",
+    subtitle: "Quiet space for prayers and reflection",
+    icon: Church,
+    bgColor: "bg-gradient-to-br from-indigo-300 to-indigo-400",
+    iconColor: "text-indigo-700",
   },
   {
-    title: "Find Doctors Near You",
-    subtitle: "Confirmed appointments",
-    icon: UserCheck,
-    bgColor: "bg-gradient-to-br from-green-300 to-green-400",
-    iconColor: "text-green-700",
+    title: "Ambulance Services",
+    subtitle: "Emergency response at your doorstep",
+    icon: Ambulance,
+    bgColor: "bg-gradient-to-br from-red-300 to-red-400",
+    iconColor: "text-red-700",
+  },
+  {
+    title: "Hospital Canteen",
+    subtitle: "Nutritious meals for patients & visitors",
+    icon: Utensils,
+    bgColor: "bg-gradient-to-br from-orange-300 to-orange-400",
+    iconColor: "text-orange-700",
   },
   {
     title: "24/7 Medicines",
@@ -67,13 +77,6 @@ const services = [
     icon: Pill,
     bgColor: "bg-gradient-to-br from-pink-300 to-pink-400",
     iconColor: "text-pink-700",
-  },
-  {
-    title: "Lab Tests",
-    subtitle: "Sample pickup at your home",
-    icon: TestTube,
-    bgColor: "bg-gradient-to-br from-blue-300 to-blue-400",
-    iconColor: "text-blue-700",
   },
 ];
 
@@ -89,32 +92,30 @@ const specialties = [
 
 const doctors = [
   {
-    name: "Dr. Sanjana Gupta",
-    specialty: "Neurosurgeon",
-    image:
-      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    name: "Dr. Jitendra piple",
+    specialty: "MD & Pediatrician",
+    image: "doctors/WhatsApp Image 2025-07-04 at 13.07.11_0fcfaabe.jpg",
     rating: 4.9,
     experience: "12 years",
   },
   {
-    name: "Dr. Pimple Popper",
-    specialty: "Psychiatrist",
-    image:
-      "https://images.pexels.com/photos/6129967/pexels-photo-6129967.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    name: "Dr. Rakesh Sukheja MD & Director",
+    specialty: "Senior pediatrician",
+    image: "doctors/WhatsApp Image 2025-07-04 at 13.08.24_90bd137b.jpg",
     rating: 4.8,
     experience: "8 years",
   },
   {
-    name: "Dr. Sherry Ross",
-    specialty: "Gynecologist",
-    image:
-      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    name: "Dr. Rajni Sukheja",
+    specialty:
+      "Dip G.O. NARCHI Director & Consultant gynecologist and obstetrician",
+    image: "doctors/Madam Photo3.jpg",
     rating: 4.9,
     experience: "15 years",
   },
   {
-    name: "Dr. Jen Gunter",
-    specialty: "Neurologist",
+    name: "Dr. Arpit Bhargav",
+    specialty: "MD & Pulmonologist",
     image:
       "https://images.pexels.com/photos/5452230/pexels-photo-5452230.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
     rating: 4.7,
@@ -162,36 +163,29 @@ const appImages = [
 // Testimonials data
 const testimonials = [
   {
-    name: "Esther Howard",
+    name: "Mohd Faisal Khan",
     image:
-      "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjVO7fwJjf4sCpxzHrzZFKdzlZbcxZTgbGzwwDiV3DIvvJvY76jMIg=s50-w40-c-h40-rp-ba4-br100",
     rating: 5,
-    text: "I had a great experience at this healthcare clinic. I was seen quickly, and the doctor was able to diagnose and treat my condition effectively.",
-    location: "New York, NY",
+    text: `Best hospital in the town with great care facilities by staff and doctors.
+Thanks lalit,Gautam and Rohan for their extended support.`,
+    location: "",
   },
   {
-    name: "John Smith",
+    name: "MANOJ BHATIA",
     image:
-      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjUSHRtqNjWitpBCeZjh3Ik4PvAq5IeDRcj42cn7ZrkkyIqOQcDwWA=w45-h45-p-rp-mo-ba3-br100",
     rating: 5,
-    text: "Outstanding service and professional staff. The facilities are modern and clean. I highly recommend this hospital for quality healthcare.",
-    location: "Los Angeles, CA",
+    text: `Excellent Hospital offering multiple specialities. Very clean and hygienic, the hospital offers medical care for the entire family! The dedication of Dr Rakesh Sukheja and Dr Rajni Sukheja is exemplary.`,
+    location: "",
   },
   {
-    name: "Sarah Johnson",
+    name: "RAM PUNDE",
     image:
-      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjVTILtc9PaSWvqDzfl1Xf0pWUIdEJy49pKVkr_bc8Or5FOqTv6qMg=w90-h90-p-rp-mo-ba6-br100",
     rating: 5,
-    text: "The medical team here is exceptional. They provided comprehensive care and made me feel comfortable throughout my treatment.",
-    location: "Chicago, IL",
-  },
-  {
-    name: "Michael Brown",
-    image:
-      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
-    rating: 5,
-    text: "Excellent healthcare services with state-of-the-art equipment. The doctors are knowledgeable and caring. Highly satisfied with my experience.",
-    location: "Houston, TX",
+    text: "Roshan children Hospital # Very clean and hygiene # hospital # located near MPEB , had a good experience recently went for some treatment # my friends son.",
+    location: "",
   },
 ];
 
@@ -403,7 +397,9 @@ export default function Home() {
         </div>
       </section>
 
-      <HospitalSection />
+      <div className="px-4">
+        <HospitalSection />
+      </div>
       {/* Services Section */}
       <section className="py-16 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -463,7 +459,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Book an appointment for an in-clinic consultation
+              Meet Our Expert Doctors
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Choose from our experienced specialists and book your appointment
@@ -504,7 +500,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <Card className="hover:shadow-lg transition-shadow duration-300">
+                <Card className="hover:shadow-lg transition-shadow duration-300 h-80">
                   <CardContent className="p-6 text-center">
                     <Avatar className="w-20 h-20 mx-auto mb-4">
                       <AvatarImage src={doctor.image} alt={doctor.name} />
@@ -596,9 +592,9 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Our doctors and clinics have earned over 5,000+ reviews on Google!
+              Loved by Thousands of Happy Patients!
             </h2>
-            <div className="flex items-center justify-center space-x-2 mb-4">
+            {/* <div className="flex items-center justify-center space-x-2 mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
@@ -606,6 +602,19 @@ export default function Home() {
                 />
               ))}
               <span className="text-lg font-semibold ml-2">
+                Average Google Rating is 4.8
+              </span>
+            </div> */}
+            <div className="flex flex-col items-center justify-center space-y-2 mb-4 sm:flex-row sm:space-y-0 sm:space-x-2">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-6 h-6 text-yellow-400 fill-current"
+                  />
+                ))}
+              </div>
+              <span className="text-lg font-semibold text-center sm:ml-2">
                 Average Google Rating is 4.8
               </span>
             </div>
@@ -717,7 +726,7 @@ export default function Home() {
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">10 Years of Excellence</h3>
+                  <h3 className="text-2xl font-bold">27 Years of Excellence</h3>
                   <p className="text-blue-100">
                     Serving the community with dedication
                   </p>
@@ -725,50 +734,37 @@ export default function Home() {
               </div>
 
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Download Our Healthcare App for Easy Access
+                5 Lakh+ Patients Served at Roshan Hospital
               </h2>
               <p className="text-lg mb-6 text-blue-100">
-                Access all our services, book appointments, and manage your
-                health records on the go with our mobile app. Over a decade of
-                trusted healthcare services, now at your fingertips.
+                For over 27 years, Roshan Hospital has been a trusted name in
+                quality healthcare—offering advanced medical services,
+                compassionate care, and a legacy of healing. Our commitment to
+                excellence has helped us serve more than half a million patients
+                with integrity and professionalism.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="flex items-center space-x-3">
                   <Users className="w-5 h-5 text-blue-200" />
-                  <span className="text-sm">50,000+ Active Users</span>
+                  <span className="text-sm">5,00,000+ Patients Served</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Heart className="w-5 h-5 text-blue-200" />
-                  <span className="text-sm">24/7 Support</span>
+                  <span className="text-sm">27 Years of Care</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Star className="w-5 h-5 text-blue-200" />
-                  <span className="text-sm">4.8 App Rating</span>
+                  <span className="text-sm">4.8+ Patient Rating</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Stethoscope className="w-5 h-5 text-blue-200" />
-                  <span className="text-sm">Expert Doctors</span>
+                  <span className="text-sm">Expert Medical Team</span>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="flex items-center"
-                >
-                  <span className="mr-2">📱</span>
-                  App Store
-                </Button>
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="flex items-center"
-                >
-                  <span className="mr-2">🤖</span>
-                  Google Play
-                </Button>
+              <div className="text-sm text-blue-200">
+                Trusted by generations. Available for you—always.
               </div>
             </motion.div>
 
@@ -788,7 +784,7 @@ export default function Home() {
                 >
                   <Image
                     src={appImages[currentImageIndex]}
-                    alt="Mobile App Interface"
+                    alt="Roshan Hospital Facility"
                     width={400}
                     height={600}
                     className="rounded-3xl shadow-2xl mx-auto"

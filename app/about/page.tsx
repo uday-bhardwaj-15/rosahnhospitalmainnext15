@@ -184,18 +184,17 @@ const accreditations = [
 const hospitalOwners: HospitalOwner[] = [
   {
     id: 1,
-    name: "Dr. Rajesh Sharma",
+    name: "Dr. Rakesh Sukheja ",
     title: "Chairman & Chief Medical Officer",
-    image:
-      "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-    specialization: "Cardiology & Hospital Administration",
+    image: "doctors/WhatsApp Image 2025-07-04 at 13.08.24_90bd137b.jpg",
+    specialization: "Senior pediatrician",
     experience: "25+ Years",
     education: "MBBS, MD Cardiology, MBA Healthcare",
     achievements: [
-      "Pioneered cardiac care programs in the region",
-      "Published 50+ research papers in medical journals",
-      "Recipient of Excellence in Healthcare Award 2023",
-      "Former President of Regional Medical Association",
+      "MD Director & Senior Pediatrician",
+      "Leadership in Pediatric Care",
+      "Member of Indian Academy of Pediatrics",
+      "Medical Director Excellence Award",
     ],
     vision:
       "To create a healthcare ecosystem that combines cutting-edge medical technology with compassionate care, making quality healthcare accessible to all segments of society.",
@@ -206,19 +205,19 @@ const hospitalOwners: HospitalOwner[] = [
   },
   {
     id: 2,
-    name: "Mrs. Priya Sharma",
+    name: "Dr. Rajni Sukheja",
     title: "Managing Director & Co-Founder",
-    image:
-      "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-    specialization: "Healthcare Administration & Strategic Planning",
+    image: "/doctors/Madam Photo3.jpg",
+    specialization:
+      "Dip G.O. NARCHI Director & Consultant gynecologist and obstetrician",
     experience: "20+ Years",
     education:
       "MBA Healthcare Management, Post Graduate Diploma in Hospital Administration",
     achievements: [
-      "Led digital transformation initiatives across the hospital",
-      "Implemented patient-centric care models",
-      "Established community health programs",
-      "Recognized as Healthcare Leader of the Year 2022",
+      "NARCHI Director & Consultant Gynecologist",
+      "Women's Health Excellence Award 2023",
+      "High-Risk Pregnancy Specialist",
+      "Member of Federation of Obstetric & Gynecological Societies",
     ],
     vision:
       "To build sustainable healthcare solutions that prioritize patient experience while maintaining operational excellence and community impact.",
