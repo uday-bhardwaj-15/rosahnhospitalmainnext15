@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  LayoutDashboard, 
-  Building2, 
-  Users, 
-  FileText, 
+import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  LayoutDashboard,
+  Building2,
+  Users,
+  FileText,
   Calendar,
   Settings,
   LogOut,
   Menu,
   X,
-  Stethoscope
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+  Stethoscope,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface AdminNavigationProps {
   activeTab: string;
@@ -24,38 +24,41 @@ interface AdminNavigationProps {
 
 const navigationItems = [
   {
-    id: 'dashboard',
-    label: 'Dashboard',
-    icon: LayoutDashboard
+    id: "dashboard",
+    label: "Dashboard",
+    icon: LayoutDashboard,
   },
   {
-    id: 'departments',
-    label: 'Departments',
-    icon: Building2
+    id: "departments",
+    label: "Departments",
+    icon: Building2,
   },
   {
-    id: 'doctors',
-    label: 'Doctors',
-    icon: Users
+    id: "doctors",
+    label: "Doctors",
+    icon: Users,
   },
   {
-    id: 'blogs',
-    label: 'Blogs',
-    icon: FileText
+    id: "blogs",
+    label: "Blogs",
+    icon: FileText,
   },
   {
-    id: 'appointments',
-    label: 'Appointments',
-    icon: Calendar
+    id: "appointments",
+    label: "Appointments",
+    icon: Calendar,
   },
   {
-    id: 'settings',
-    label: 'Settings',
-    icon: Settings
-  }
+    id: "settings",
+    label: "Settings",
+    icon: Settings,
+  },
 ];
 
-export default function AdminNavigation({ activeTab, setActiveTab }: AdminNavigationProps) {
+export default function AdminNavigation({
+  activeTab,
+  setActiveTab,
+}: AdminNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -67,7 +70,11 @@ export default function AdminNavigation({ activeTab, setActiveTab }: AdminNaviga
           size="sm"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          {isMobileMenuOpen ? (
+            <X className="w-4 h-4" />
+          ) : (
+            <Menu className="w-4 h-4" />
+          )}
         </Button>
       </div>
 
@@ -76,7 +83,9 @@ export default function AdminNavigation({ activeTab, setActiveTab }: AdminNaviga
         initial={{ x: -300 }}
         animate={{ x: 0 }}
         className={`fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 z-40 transform transition-transform duration-300 ${
-          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+          isMobileMenuOpen
+            ? "translate-x-0"
+            : "-translate-x-full lg:translate-x-0"
         }`}
       >
         <div className="p-6">
@@ -99,8 +108,8 @@ export default function AdminNavigation({ activeTab, setActiveTab }: AdminNaviga
                 }}
                 className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors duration-200 ${
                   activeTab === item.id
-                    ? 'bg-blue-50 text-blue-600 border border-blue-200'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    ? "bg-blue-50 text-blue-600 border border-blue-200"
+                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                 }`}
               >
                 <item.icon className="w-5 h-5" />
