@@ -173,7 +173,7 @@ const accreditations = [
   },
   {
     name: "NABH Accreditation",
-    code: "https://nabh.co/wp-content/uploads/2023/10/nabh-make-2.jpg",
+    code: "/nabh-certified-colour-logo-png_seeklogo-523011.png",
   },
   {
     name: "NABL Certified Labs",

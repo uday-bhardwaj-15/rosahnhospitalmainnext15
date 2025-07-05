@@ -39,9 +39,9 @@ const contactInfo = [
     icon: Phone,
     title: "Phone Numbers",
     items: [
-      { label: "Main Reception", value: "+1 (555) 123-4567" },
-      { label: "Emergency", value: "+1 (555) 911-HELP" },
-      { label: "Appointments", value: "+1 (555) 123-BOOK" },
+      { label: "Main Reception", value: "+91 9111222234" },
+      // { label: "Emergency", value: "+1 (555) 911-HELP" },
+      // { label: "Appointments", value: "+1 (555) 123-BOOK" },
     ],
   },
   {
@@ -57,9 +57,9 @@ const contactInfo = [
     icon: MapPin,
     title: "Location",
     items: [
-      { label: "Address", value: "123 Healthcare Avenue" },
-      { label: "City", value: "Medical District, NY 10001" },
-      { label: "Directions", value: "Near Central Park, Subway: Line 4,5,6" },
+      { label: "Address", value: "7, A-B, Raisen Rd, Govind Garden" },
+      { label: "City", value: "Sector B, Govindpura, Bhopal" },
+      { label: "Directions", value: "Madhya Pradesh 462023" },
     ],
   },
   {
@@ -68,7 +68,7 @@ const contactInfo = [
     items: [
       { label: "Emergency Services", value: "24/7" },
       { label: "General Consultation", value: "Mon-Sat: 8AM-8PM" },
-      { label: "Pharmacy", value: "Mon-Sat: 8AM-8PM" },
+      { label: "Pharmacy", value: "24/7" },
     ],
   },
 ];
@@ -382,7 +382,7 @@ export default function Contact() {
                     </div>
 
                     {/* Preferred Contact Method */}
-                    <div>
+                    {/* <div>
                       <Label>Preferred Contact Method</Label>
                       <div className="flex space-x-6 mt-2">
                         <div className="flex items-center space-x-2">
@@ -406,7 +406,7 @@ export default function Contact() {
                           <Label htmlFor="phone-contact">Phone</Label>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                     <Button type="submit" className="w-full" size="lg">
                       <Send className="w-4 h-4 mr-2" />
@@ -425,7 +425,7 @@ export default function Contact() {
               className="space-y-6"
             >
               {/* Map Placeholder */}
-              <Card className="shadow-lg">
+              {/* <Card className="shadow-lg">
                 <CardContent className="p-0">
                   <div className="aspect-video bg-gradient-to-br from-blue-100 to-green-100 rounded-t-lg relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -444,6 +444,52 @@ export default function Contact() {
                   </div>
                   <div className="p-6">
                     <Button className="w-full" variant="outline">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Get Directions
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card> */}
+              <Card className="shadow-lg">
+                <CardContent className="p-0">
+                  <div className="aspect-video rounded-t-lg relative overflow-hidden">
+                    {/* Embedded Map as Background */}
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d117303.44451154201!2d77.35672350246504!3d23.252814207267576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x397c42043a6c624f%3A0x4ea4ae4b80550599!2s7%2C%20A-B%2C%20Raisen%20Rd%2C%20Govind%20Garden%2C%20Sector%20B%2C%20Govindpura%2C%20Bhopal%2C%20Madhya%20Pradesh%20462023!3m2!1d23.2528357!2d77.4391251!5e0!3m2!1sen!2sin!4v1751707377858!5m2!1sen!2sin"
+                      className="absolute inset-0 w-full h-full border-0"
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+
+                    {/* Overlay Content */}
+                    {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-green-100 opacity-70"></div> */}
+                    {/* <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <MapPin className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                          Roshan Hospital
+                        </h3>
+                        <p className="text-gray-700 font-medium">
+                          123 Healthcare Avenue
+                          <br />
+                          Medical District, NY 10001
+                        </p>
+                      </div>
+                    </div> */}
+                  </div>
+
+                  <div className="p-6">
+                    <Button
+                      className="w-full"
+                      variant="outline"
+                      onClick={() =>
+                        window.open(
+                          "https://maps.app.goo.gl/VtjyTDDZS9Nkbmqy9",
+                          "_blank"
+                        )
+                      }
+                    >
                       <MapPin className="w-4 h-4 mr-2" />
                       Get Directions
                     </Button>

@@ -24,6 +24,7 @@ import {
   Utensils,
   Ambulance,
   Church,
+  Shield,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -58,7 +59,7 @@ const services = [
     iconColor: "text-indigo-700",
   },
   {
-    title: "Ambulance Services",
+    title: "24/7 Ambulance Services",
     subtitle: "Emergency response at your doorstep",
     icon: Ambulance,
     bgColor: "bg-gradient-to-br from-red-300 to-red-400",
@@ -96,14 +97,14 @@ const doctors = [
     specialty: "MD & Pediatrician",
     image: "doctors/WhatsApp Image 2025-07-04 at 13.07.11_0fcfaabe.jpg",
     rating: 4.9,
-    experience: "12 years",
+    experience: "",
   },
   {
     name: "Dr. Rakesh Sukheja MD & Director",
     specialty: "Senior pediatrician",
     image: "doctors/WhatsApp Image 2025-07-04 at 13.08.24_90bd137b.jpg",
     rating: 4.8,
-    experience: "8 years",
+    experience: "27 years",
   },
   {
     name: "Dr. Rajni Sukheja",
@@ -111,7 +112,7 @@ const doctors = [
       "Dip G.O. NARCHI Director & Consultant gynecologist and obstetrician",
     image: "doctors/Madam Photo3.jpg",
     rating: 4.9,
-    experience: "15 years",
+    experience: "27 years",
   },
   {
     name: "Dr. Arpit Bhargav",
@@ -119,7 +120,7 @@ const doctors = [
     image:
       "https://images.pexels.com/photos/5452230/pexels-photo-5452230.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
     rating: 4.7,
-    experience: "10 years",
+    experience: "",
   },
 ];
 
@@ -241,7 +242,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen  bg-gradient-to-br overflow-x-hidden from-blue-50 via-white to-green-50">
+    <div className="min-h-screen  bg-gradient-to-br  from-blue-50 via-white to-green-50">
       {/* Hero Section */}
       {/* <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 ">
@@ -319,7 +320,7 @@ export default function Home() {
         </div>
       </section> */}
       <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 ">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -329,34 +330,39 @@ export default function Home() {
             >
               <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 rounded-3xl p-8 text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-purple-600/90"></div>
-                <div className="relative z-10 space-y-5">
-                  <h2 className="text-3xl lg:text-4xl font-bold">
-                    Welcome to Roshan Hospital
+                <div className="relative z-10 space-y-6">
+                  <h2 className="text-3xl lg:text-5xl font-bold">
+                    Welcome to Roshan Hospital, Bhopal
                   </h2>
 
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Trusted by Bhopal for advanced care, modern facilities, and
-                    a dedicated team of specialists — all under one roof.
+                  <p className="text-white/90 text-lg">
+                    At Roshan Hospital, we are committed to delivering
+                    compassionate and high-quality medical care. Our
+                    multidisciplinary team of experienced doctors and modern
+                    infrastructure make us one of Bhopal’s most trusted
+                    healthcare destinations.
                   </p>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
                         <div className="w-2 h-2 bg-white rounded-full"></div>
                       </div>
-                      <span>24/7 Emergency</span>
+                      <span className="text-lg">24/7 Emergency Services</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
                         <div className="w-2 h-2 bg-white rounded-full"></div>
                       </div>
-                      <span>Expert Doctors</span>
+                      <span className="text-lg">Advanced Diagnostics</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
                         <div className="w-2 h-2 bg-white rounded-full"></div>
                       </div>
-                      <span>Modern Diagnostics</span>
+                      <span className="text-lg">
+                        Experienced Medical Specialists
+                      </span>
                     </li>
                   </ul>
 
@@ -368,10 +374,16 @@ export default function Home() {
                       size="lg"
                       className="bg-white text-blue-600 hover:bg-gray-100"
                     >
-                      Book Appointment
+                      Book Your Appointment
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
                   </motion.div>
+
+                  <p className="text-sm mt-4 text-white/70">
+                    Located in the heart of Bhopal, Roshan Hospital offers
+                    personalized care with modern technology — because your
+                    health deserves the best.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -396,58 +408,163 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* our mission */}
+      <section className="py-16 bg-white/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Our Mission
+                </h2>
+                <p className="text-lg text-gray-600">
+                  To provide compassionate, high-quality healthcare services
+                  that improve the health and well-being of our community. We
+                  are committed to clinical excellence, innovation, and treating
+                  every patient with dignity and respect.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Our Vision
+                </h2>
+                <p className="text-lg text-gray-600">
+                  To be the leading healthcare provider in the region,
+                  recognized for our commitment to patient care, medical
+                  excellence, and community health. We envision a healthier
+                  community where everyone has access to quality healthcare.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="h-full shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-2xl">
+                    Why Choose Roshan Hospital?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <Award className="w-6 h-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold">Accredited Excellence</h4>
+                      <p className="text-gray-600">
+                        JCI and NABH accredited facility
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Users className="w-6 h-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold">Expert Medical Team</h4>
+                      <p className="text-gray-600">
+                        Board-certified specialists
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Shield className="w-6 h-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold">Advanced Technology</h4>
+                      <p className="text-gray-600">
+                        State-of-the-art medical equipment
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Heart className="w-6 h-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold">Compassionate Care</h4>
+                      <p className="text-gray-600">Patient-centered approach</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Holistic Patient Care Facilities
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              These values guide everything we do and shape our commitment to
+              providing exceptional healthcare services.
+            </p>
+          </motion.div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="group cursor-pointer"
+                >
+                  <Card
+                    className={`${service.bgColor} border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full`}
+                  >
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="space-y-2">
+                          <h3 className="text-lg font-semibold text-gray-900">
+                            {service.title}
+                          </h3>
+                          <p className="text-sm text-gray-700">
+                            {service.subtitle}
+                          </p>
+                        </div>
+                        <motion.div
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          className={`p-3 rounded-xl bg-white/30 ${service.iconColor}`}
+                        >
+                          <service.icon className="w-6 h-6" />
+                        </motion.div>
+                      </div>
+                      <div className="flex justify-end">
+                        <motion.div
+                          whileHover={{ x: 5 }}
+                          className="w-8 h-8 bg-white/40 rounded-full flex items-center justify-center"
+                        >
+                          <ArrowRight className="w-4 h-4 text-gray-700" />
+                        </motion.div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="px-4">
         <HospitalSection />
       </div>
-      {/* Services Section */}
-      <section className="py-16 bg-white/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="group cursor-pointer"
-              >
-                <Card
-                  className={`${service.bgColor} border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full`}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-gray-900">
-                          {service.title}
-                        </h3>
-                        <p className="text-sm text-gray-700">
-                          {service.subtitle}
-                        </p>
-                      </div>
-                      <motion.div
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        className={`p-3 rounded-xl bg-white/30 ${service.iconColor}`}
-                      >
-                        <service.icon className="w-6 h-6" />
-                      </motion.div>
-                    </div>
-                    <div className="flex justify-end">
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="w-8 h-8 bg-white/40 rounded-full flex items-center justify-center"
-                      >
-                        <ArrowRight className="w-4 h-4 text-gray-700" />
-                      </motion.div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Appointment Booking Section */}
       <section className="py-16">
@@ -594,17 +711,6 @@ export default function Home() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Loved by Thousands of Happy Patients!
             </h2>
-            {/* <div className="flex items-center justify-center space-x-2 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-6 h-6 text-yellow-400 fill-current"
-                />
-              ))}
-              <span className="text-lg font-semibold ml-2">
-                Average Google Rating is 4.8
-              </span>
-            </div> */}
             <div className="flex flex-col items-center justify-center space-y-2 mb-4 sm:flex-row sm:space-y-0 sm:space-x-2">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -626,7 +732,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-4xl mx-auto relative"
           >
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden rounded-lg">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{
@@ -634,11 +740,14 @@ export default function Home() {
                 }}
               >
                 {testimonials.map((testimonial, index) => (
-                  <div key={index} className="w-full flex-shrink-0 px-4">
+                  <div
+                    key={index}
+                    className="w-full flex-shrink-0 px-2 sm:px-4"
+                  >
                     <Card className="shadow-lg">
-                      <CardContent className="p-8">
+                      <CardContent className="p-4 sm:p-8">
                         <div className="flex items-start space-x-4">
-                          <Avatar className="w-16 h-16">
+                          <Avatar className="w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
                             <AvatarImage
                               src={testimonial.image}
                               alt={testimonial.name}
@@ -650,24 +759,24 @@ export default function Home() {
                                 .join("")}
                             </AvatarFallback>
                           </Avatar>
-                          <div className="flex-1">
+                          <div className="flex-1 min-w-0">
                             <div className="flex items-center space-x-2 mb-2">
-                              <h4 className="font-semibold text-lg">
+                              <h4 className="font-semibold text-base sm:text-lg truncate">
                                 {testimonial.name}
                               </h4>
-                              <div className="flex">
+                              <div className="flex flex-shrink-0">
                                 {[...Array(testimonial.rating)].map((_, i) => (
                                   <Star
                                     key={i}
-                                    className="w-4 h-4 text-yellow-400 fill-current"
+                                    className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"
                                   />
                                 ))}
                               </div>
                             </div>
-                            <p className="text-sm text-gray-500 mb-3">
+                            <p className="text-xs sm:text-sm text-gray-500 mb-3">
                               {testimonial.location}
                             </p>
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                               {testimonial.text}
                             </p>
                           </div>
@@ -679,19 +788,37 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
+            {/* Navigation Buttons - Hidden on mobile, shown on larger screens */}
+            <div className="hidden sm:block">
+              <button
+                onClick={prevTestimonial}
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors"
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-600" />
+              </button>
+              <button
+                onClick={nextTestimonial}
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors"
+              >
+                <ChevronRight className="w-6 h-6 text-gray-600" />
+              </button>
+            </div>
+
+            {/* Mobile Navigation Buttons - Positioned inside container */}
+            <div className="flex sm:hidden justify-between items-center mt-4 px-4">
+              <button
+                onClick={prevTestimonial}
+                className="bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5 text-gray-600" />
+              </button>
+              <button
+                onClick={nextTestimonial}
+                className="bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors"
+              >
+                <ChevronRight className="w-5 h-5 text-gray-600" />
+              </button>
+            </div>
 
             {/* Dots Indicator */}
             <div className="flex justify-center space-x-2 mt-6">
@@ -712,31 +839,34 @@ export default function Home() {
       {/* Mobile App Section with Auto-changing Images */}
       <section
         ref={appSectionRef}
-        className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+        className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1"
             >
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                  <Award className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold">27 Years of Excellence</h3>
-                  <p className="text-blue-100">
+                <div className="min-w-0">
+                  <h3 className="text-xl sm:text-2xl font-bold">
+                    27 Years of Excellence
+                  </h3>
+                  <p className="text-sm sm:text-base text-blue-100">
                     Serving the community with dedication
                   </p>
                 </div>
               </div>
 
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
                 5 Lakh+ Patients Served at Roshan Hospital
               </h2>
-              <p className="text-lg mb-6 text-blue-100">
+              <p className="text-base sm:text-lg mb-6 text-blue-100">
                 For over 27 years, Roshan Hospital has been a trusted name in
                 quality healthcare—offering advanced medical services,
                 compassionate care, and a legacy of healing. Our commitment to
@@ -744,22 +874,28 @@ export default function Home() {
                 with integrity and professionalism.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="flex items-center space-x-3">
-                  <Users className="w-5 h-5 text-blue-200" />
-                  <span className="text-sm">5,00,000+ Patients Served</span>
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-200 flex-shrink-0" />
+                  <span className="text-sm sm:text-base">
+                    5,00,000+ Patients Served
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Heart className="w-5 h-5 text-blue-200" />
-                  <span className="text-sm">27 Years of Care</span>
+                  <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-blue-200 flex-shrink-0" />
+                  <span className="text-sm sm:text-base">27 Years of Care</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Star className="w-5 h-5 text-blue-200" />
-                  <span className="text-sm">4.8+ Patient Rating</span>
+                  <Star className="w-4 h-4 sm:w-5 sm:h-5 text-blue-200 flex-shrink-0" />
+                  <span className="text-sm sm:text-base">
+                    4.8+ Patient Rating
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Stethoscope className="w-5 h-5 text-blue-200" />
-                  <span className="text-sm">Expert Medical Team</span>
+                  <Stethoscope className="w-4 h-4 sm:w-5 sm:h-5 text-blue-200 flex-shrink-0" />
+                  <span className="text-sm sm:text-base">
+                    Expert Medical Team
+                  </span>
                 </div>
               </div>
 
@@ -772,9 +908,9 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative order-1 lg:order-2"
             >
-              <div className="relative">
+              <div className="relative max-w-sm mx-auto">
                 <motion.div
                   key={currentImageIndex}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -787,7 +923,7 @@ export default function Home() {
                     alt="Roshan Hospital Facility"
                     width={400}
                     height={600}
-                    className="rounded-3xl shadow-2xl mx-auto"
+                    className="rounded-3xl shadow-2xl mx-auto w-full h-auto max-w-xs sm:max-w-sm"
                   />
                 </motion.div>
 
@@ -807,7 +943,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Blog Section */}
       <section className="py-16 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

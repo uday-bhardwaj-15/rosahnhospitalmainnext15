@@ -454,7 +454,7 @@ const doctors = [
     name: "Dr. Anurag Tiwari",
     specialty: "Orthopedics",
     subSpecialty: "Joint Replacement & Sports Injury",
-    image: "/doctors/Dranuragtiwari.jpg",
+    image: "/doctors/Dr Rakesh Sukheja(MD) Dr Sanjeev Jain (DCH).jpg",
     rating: 4.8,
     reviews: 320,
     experience: "13 years",
@@ -800,6 +800,156 @@ const doctors = [
     phone: "+1 (555) 123-4587",
     email: "dr.tamanna@roshanhospital.com",
   },
+  {
+    id: 16,
+    name: "Dr. Sadat Qureshi",
+    specialty: "ENT",
+    subSpecialty: "Otorhinolaryngology & Head-Neck Surgery",
+    image: "/doctors/drsadatqureshi.jpg",
+    rating: 4.7,
+    reviews: 285,
+    experience: "11 years",
+    education: "MS (ENT), DNB",
+    languages: ["English", "Hindi", "Urdu"],
+    consultationFee: "$140",
+    about:
+      "Dr. Sadat Qureshi is a skilled ENT specialist with extensive experience in treating ear, nose, and throat disorders. He provides comprehensive care for conditions including hearing loss, sinusitis, throat infections, and performs advanced endoscopic surgeries for nasal and sinus conditions.",
+    achievements: [
+      "MS in Otorhinolaryngology",
+      "Advanced Training in Endoscopic Sinus Surgery",
+      "Member of Association of Otolaryngologists of India",
+      "Excellence in ENT Care Award 2022",
+    ],
+    availability: ["Mon", "Tue", "Thu", "Sat"],
+    hospital: "Roshan Hospital",
+    phone: "+1 (555) 123-4575",
+    email: "dr.sadat-qureshi@roshanhospital.com",
+  },
+  {
+    id: 17,
+    name: "Dr. Ankit Jain",
+    specialty: "Pediatric Orthopedics",
+    subSpecialty: "Congenital Deformities & Growth Disorders",
+    image: "/doctors/drankitjain.jpg",
+    rating: 4.9,
+    reviews: 412,
+    experience: "9 years",
+    education: "MS (Orthopedics), Fellowship in Pediatric Orthopedics",
+    languages: ["English", "Hindi"],
+    consultationFee: "$150",
+    about:
+      "Dr. Ankit Jain is a dedicated pediatric orthopedic surgeon specializing in the diagnosis and treatment of musculoskeletal conditions in children and adolescents. He has expertise in treating congenital deformities, growth plate injuries, scoliosis, and developmental hip dysplasia using both conservative and surgical approaches.",
+    achievements: [
+      "MS in Orthopedics with Pediatric Fellowship",
+      "Specialist in Pediatric Spinal Deformities",
+      "Member of Pediatric Orthopedic Society of India",
+      "Young Achiever Award in Pediatric Orthopedics 2023",
+    ],
+    availability: ["Mon", "Wed", "Fri", "Sat"],
+    hospital: "Roshan Hospital",
+    phone: "+1 (555) 123-4576",
+    email: "dr.ankit-jain@roshanhospital.com",
+  },
+  {
+    id: 18,
+    name: "Dr. Arpit Bhargav",
+    specialty: "Pulmonology",
+    subSpecialty: "Respiratory Medicine & Critical Care",
+    image: "/doctors/drarpitbhargav.jpg",
+    rating: 4.6,
+    reviews: 298,
+    experience: "8 years",
+    education: "MD (Pulmonary Medicine), IDCCM",
+    languages: ["English", "Hindi"],
+    consultationFee: "$130",
+    about:
+      "Dr. Arpit Bhargav is a competent pulmonologist specializing in the diagnosis and treatment of respiratory disorders. He provides comprehensive care for conditions including asthma, COPD, pneumonia, tuberculosis, and sleep disorders. He is also trained in critical care medicine and bronchoscopic procedures.",
+    achievements: [
+      "MD in Pulmonary Medicine",
+      "Indian Diploma in Critical Care Medicine",
+      "Advanced Training in Interventional Pulmonology",
+      "Member of Indian Chest Society",
+    ],
+    availability: ["Tue", "Wed", "Thu", "Fri"],
+    hospital: "Roshan Hospital",
+    phone: "+1 (555) 123-4577",
+    email: "dr.arpit-bhargav@roshanhospital.com",
+  },
+  {
+    id: 19,
+    name: "Dr. Rajeev Sharda",
+    specialty: "General Surgery",
+    subSpecialty: "Laparoscopic & Minimally Invasive Surgery",
+    image: "/doctors/drrajeevsharda.jpg",
+    rating: 4.8,
+    reviews: 367,
+    experience: "15 years",
+    education: "MS (General Surgery), Advanced Laparoscopy Training",
+    languages: ["English", "Hindi"],
+    consultationFee: "$145",
+    about:
+      "Dr. Rajeev Sharda is an experienced general and laparoscopic surgeon with expertise in performing complex abdominal surgeries using minimally invasive techniques. He specializes in gallbladder surgery, hernia repair, appendectomy, and gastrointestinal procedures with focus on faster recovery and minimal scarring.",
+    achievements: [
+      "MS in General Surgery",
+      "Advanced Certification in Laparoscopic Surgery",
+      "Member of Association of Surgeons of India",
+      "Excellence in Minimally Invasive Surgery 2020",
+    ],
+    availability: ["Mon", "Tue", "Wed", "Fri"],
+    hospital: "Roshan Hospital",
+    phone: "+1 (555) 123-4578",
+    email: "dr.rajeev-sharda@roshanhospital.com",
+  },
+  {
+    id: 20,
+    name: "Dr. Saurabh Jain",
+    specialty: "Urology",
+    subSpecialty: "Uro-oncology & Reconstructive Urology",
+    image: "/doctors/drsaurabhjain.jpg",
+    rating: 4.9,
+    reviews: 445,
+    experience: "12 years",
+    education: "MCh (Urology), MS (General Surgery)",
+    languages: ["English", "Hindi"],
+    consultationFee: "$170",
+    about:
+      "Dr. Saurabh Jain is a highly skilled urologist specializing in the diagnosis and treatment of urological disorders. He has extensive experience in kidney stone management, prostate surgery, bladder cancer treatment, and reconstructive urology. He performs both open and minimally invasive urological procedures.",
+    achievements: [
+      "MCh in Urology",
+      "Fellowship in Uro-oncology",
+      "Member of Urological Society of India",
+      "Best Urologist Award 2021",
+    ],
+    availability: ["Mon", "Wed", "Thu", "Sat"],
+    hospital: "Roshan Hospital",
+    phone: "+1 (555) 123-4579",
+    email: "dr.saurabh-jain@roshanhospital.com",
+  },
+  {
+    id: 21,
+    name: "Dr. Shubhangi Jain",
+    specialty: "Family Medicine",
+    subSpecialty: "Preventive Care & Chronic Disease Management",
+    image: "/doctors/drshubhangijain.jpg",
+    rating: 4.7,
+    reviews: 523,
+    experience: "10 years",
+    education: "MD (Family Medicine), MBBS",
+    languages: ["English", "Hindi"],
+    consultationFee: "$110",
+    about:
+      "Dr. Shubhangi Jain is a dedicated family medicine physician providing comprehensive primary healthcare services for patients of all ages. She focuses on preventive care, health maintenance, and management of chronic conditions including diabetes, hypertension, and cardiovascular diseases. She emphasizes patient education and lifestyle modifications for optimal health outcomes.",
+    achievements: [
+      "MD in Family Medicine",
+      "Board Certified Family Physician",
+      "Member of Academy of Family Physicians of India",
+      "Excellence in Primary Care 2022",
+    ],
+    availability: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    hospital: "Roshan Hospital",
+    phone: "+1 (555) 123-4580",
+    email: "dr.shubhangi-jain@roshanhospital.com",
+  },
 ];
 const specialties = [
   "All Doctors",
@@ -904,7 +1054,6 @@ export default function Doctors() {
                 <SelectContent>
                   <SelectItem value="name">Name</SelectItem>
                   <SelectItem value="rating">Rating</SelectItem>
-                  <SelectItem value="experience">Experience</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -962,7 +1111,7 @@ export default function Doctors() {
                             ({doctor.reviews} reviews)
                           </span>
                         </div>
-                        <Badge variant="secondary">{doctor.experience}</Badge>
+                        {/* <Badge variant="secondary">{doctor.experience}</Badge> */}
                       </div>
 
                       <div className="flex items-center space-x-4 text-sm text-gray-600">
@@ -970,13 +1119,13 @@ export default function Doctors() {
                           <MapPin className="w-4 h-4" />
                           <span>{doctor.hospital}</span>
                         </div>
-                        <div className="flex items-center space-x-1">
+                        {/* <div className="flex items-center space-x-1">
                           <Clock className="w-4 h-4" />
                           <span>{doctor.consultationFee}</span>
-                        </div>
+                        </div> */}
                       </div>
 
-                      <div className="flex flex-wrap gap-1">
+                      {/* <div className="flex flex-wrap gap-1">
                         {doctor.availability.map((day) => (
                           <Badge
                             key={day}
@@ -986,7 +1135,7 @@ export default function Doctors() {
                             {day}
                           </Badge>
                         ))}
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="flex space-x-2">
@@ -1035,9 +1184,9 @@ export default function Doctors() {
                                   <span className="text-sm text-gray-500">
                                     ({doctor.reviews} reviews)
                                   </span>
-                                  <Badge variant="secondary">
+                                  {/* <Badge variant="secondary">
                                     {doctor.experience}
-                                  </Badge>
+                                  </Badge> */}
                                 </div>
                               </div>
                             </div>
@@ -1102,7 +1251,7 @@ export default function Doctors() {
 
                             <Separator />
 
-                            <div className="grid md:grid-cols-2 gap-6">
+                            {/* <div className="grid md:grid-cols-2 gap-6">
                               <div>
                                 <h4 className="font-semibold text-lg mb-3">
                                   Contact
@@ -1138,12 +1287,16 @@ export default function Doctors() {
                                   Consultation Fee: {doctor.consultationFee}
                                 </p>
                               </div>
-                            </div>
+                            </div> */}
                           </div>
                         </DialogContent>
                       </Dialog>
 
-                      <Button size="sm" className="flex-1">
+                      <Button
+                        size="sm"
+                        className="flex-1"
+                        onClick={() => (window.location.href = `/contact`)}
+                      >
                         <Calendar className="w-4 h-4 mr-2" />
                         Book Appointment
                       </Button>
