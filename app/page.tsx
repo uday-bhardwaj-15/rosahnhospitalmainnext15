@@ -373,6 +373,7 @@ export default function Home() {
                     <Button
                       size="lg"
                       className="bg-white text-blue-600 hover:bg-gray-100"
+                      onClick={() => window.open("/contact", "_blank")}
                     >
                       Book Your Appointment
                       <ArrowRight className="w-5 h-5 ml-2" />
@@ -665,40 +666,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Card
-                  className={`${stat.bgColor} border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 text-white`}
-                >
-                  <CardContent className="p-6">
-                    {stat.icon && (
-                      <div className="text-3xl mb-4">{stat.icon}</div>
-                    )}
-                    {stat.number && (
-                      <div className="text-4xl font-bold mb-2">
-                        {stat.number}
-                      </div>
-                    )}
-                    <h3 className="font-semibold text-lg mb-2">{stat.title}</h3>
-                    <p className="text-sm opacity-90">{stat.subtitle}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Reviews Section with Carousel */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -839,7 +806,7 @@ export default function Home() {
       {/* Mobile App Section with Auto-changing Images */}
       <section
         ref={appSectionRef}
-        className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white overflow-hidden"
+        className="py-16 bg-gradient-to-r from-[#0051a0] to-purple-600 text-white overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -961,6 +928,7 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {/* Blog 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -970,18 +938,19 @@ export default function Home() {
               <Card className="hover:shadow-lg transition-shadow duration-300">
                 <div className="aspect-video bg-gradient-to-br from-green-400 to-blue-500 rounded-t-lg"></div>
                 <CardContent className="p-6">
-                  <Badge className="mb-3">Blog Post</Badge>
+                  <Badge className="mb-3">Pediatric Insight</Badge>
                   <h3 className="font-semibold text-lg mb-2">
-                    Acne Care Combo of Cetaphil Oily Skin Cleanse
+                    Advanced Pediatric Surgery: Insights from Dr. Saket Jha
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Learn about effective skincare routines for oily and
-                    acne-prone skin.
+                    Explore neonatal and congenital surgeries with Dr. Saket
+                    Jha, a leading expert at Roshan Hospital.
                   </p>
                 </CardContent>
               </Card>
             </motion.div>
 
+            {/* Blog 2 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -991,18 +960,19 @@ export default function Home() {
               <Card className="hover:shadow-lg transition-shadow duration-300">
                 <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-500 rounded-t-lg"></div>
                 <CardContent className="p-6">
-                  <Badge className="mb-3">Healthy Lifestyle</Badge>
+                  <Badge className="mb-3">Pain Management</Badge>
                   <h3 className="font-semibold text-lg mb-2">
-                    Your Ultimate Guide to Health and Wellness
+                    Managing Pain with Precision: Dr. Sandesh Yadav’s Approach
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Comprehensive guide to maintaining a healthy lifestyle and
-                    preventing diseases.
+                    Discover Dr. Yadav’s techniques in regional anesthesia and
+                    chronic pain relief at Roshan Hospital.
                   </p>
                 </CardContent>
               </Card>
             </motion.div>
 
+            {/* Blog 3 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1013,21 +983,21 @@ export default function Home() {
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
                     <Avatar className="w-16 h-16">
-                      <AvatarImage src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" />
-                      <AvatarFallback>DR</AvatarFallback>
+                      <AvatarImage src="/doctors/WhatsApp Image 2025-07-04 at 13.04.54_488f52d4.jpg" />
+                      <AvatarFallback>SB</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h4 className="font-semibold">Dr. Rodriguez</h4>
+                      <h4 className="font-semibold">Dr. Sumit Bhatnagar</h4>
                       <p className="text-sm text-gray-600">Cardiologist</p>
                     </div>
                   </div>
-                  <Badge className="mb-3">Good Consultation</Badge>
+                  <Badge className="mb-3">Heart Health</Badge>
                   <h3 className="font-semibold text-lg mb-2">
-                    Your Ultimate Guide to Health and Wellness
+                    Cardiac Excellence with Dr. Sumit Bhatnagar
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Expert advice on maintaining cardiovascular health and
-                    preventing heart disease.
+                    Learn how Dr. Bhatnagar is transforming interventional
+                    cardiology and heart care at Roshan Hospital.
                   </p>
                 </CardContent>
               </Card>

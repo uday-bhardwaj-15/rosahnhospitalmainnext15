@@ -63,50 +63,51 @@ interface BlogPost {
 const mockBlogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Your Ultimate Guide to Health and Wellness",
+    title: "Advanced Pediatric Surgery: Insights from Dr. Saket Jha",
     content:
-      "Comprehensive guide to maintaining a healthy lifestyle and preventing diseases...",
+      "Dr. Saket Jha, a leading Pediatric Surgeon at Roshan Hospital, shares key insights into neonatal surgeries and congenital anomalies. His dedication to caring for the youngest patients is unmatched, with advanced techniques and family-centered approaches.",
     excerpt:
-      "Learn essential tips for maintaining optimal health and wellness in your daily life.",
-    author: "Dr. Sarah Johnson",
-    publishedDate: "2024-01-15",
+      "Explore the world of neonatal and pediatric surgery with Dr. Saket Jha, expert in complex congenital anomalies.",
+    author: "Dr. Saket Jha",
+    publishedDate: "2024-02-01",
     status: "published",
     featuredImage:
-      "https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tags: ["Health", "Wellness", "Prevention"],
-    readTime: "8 min read",
-    views: 1247,
+      "https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    tags: ["Pediatrics", "Surgery", "Neonatal"],
+    readTime: "7 min read",
+    views: 1043,
   },
   {
     id: 2,
-    title: "Acne Care Combo of Cetaphil Oily Skin Cleanse",
+    title: "Managing Pain with Precision: Dr. Sandesh Yadav’s Approach",
     content:
-      "Learn about effective skincare routines for oily and acne-prone skin...",
+      "With years of experience in regional anesthesia and pain management, Dr. Sandesh Yadav helps patients lead better lives through innovative anesthetic techniques and compassionate care. His work in perioperative pain control is widely respected.",
     excerpt:
-      "Discover the best skincare routine for managing acne and oily skin conditions.",
-    author: "Dr. Michael Chen",
-    publishedDate: "2024-01-10",
+      "Dr. Sandesh Yadav shares his experience in pain management and regional anesthesia at Roshan Hospital.",
+    author: "Dr. Sandesh Yadav",
+    publishedDate: "2024-02-12",
     status: "published",
     featuredImage:
-      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tags: ["Skincare", "Acne", "Beauty"],
-    readTime: "5 min read",
-    views: 892,
+      "https://images.pexels.com/photos/6749779/pexels-photo-6749779.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    tags: ["Anesthesia", "Pain Management", "Wellness"],
+    readTime: "6 min read",
+    views: 1342,
   },
   {
     id: 3,
-    title: "Heart Health Tips for Seniors",
-    content: "Important cardiovascular health advice for older adults...",
+    title: "Cardiac Excellence with Dr. Sumit Bhatnagar",
+    content:
+      "Dr. Sumit Bhatnagar is a renowned interventional cardiologist at Roshan Hospital. His focus on heart disease prevention, diagnosis, and minimally invasive treatment has improved the lives of thousands of patients across the region.",
     excerpt:
-      "Essential heart health tips and preventive measures for senior citizens.",
-    author: "Dr. Sanjana Gupta",
-    publishedDate: "2024-01-08",
-    status: "draft",
+      "A look into the interventional cardiology work of Dr. Sumit Bhatnagar and his patient-first approach.",
+    author: "Dr. Sumit Bhatnagar",
+    publishedDate: "2024-03-05",
+    status: "published",
     featuredImage:
-      "https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tags: ["Cardiology", "Seniors", "Prevention"],
-    readTime: "6 min read",
-    views: 0,
+      "https://images.pexels.com/photos/1001897/pexels-photo-1001897.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    tags: ["Cardiology", "Heart Health", "Doctors"],
+    readTime: "8 min read",
+    views: 1590,
   },
 ];
 

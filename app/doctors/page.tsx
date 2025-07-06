@@ -1295,7 +1295,7 @@ export default function Doctors() {
                       <Button
                         size="sm"
                         className="flex-1"
-                        onClick={() => (window.location.href = `/contact`)}
+                        onClick={() => window.open("/contact", "_blank")}
                       >
                         <Calendar className="w-4 h-4 mr-2" />
                         Book Appointment

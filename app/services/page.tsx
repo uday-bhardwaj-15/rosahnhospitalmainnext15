@@ -51,10 +51,9 @@ const departments = [
       "Helicopter landing pad",
       "Advanced life support ambulances",
     ],
-    image:
-      "https://images.pexels.com/photos/8845216/pexels-photo-8845216.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/gallery/Emergency Room.jpg",
     availability: "24/7",
-    contactNumber: "+1 (555) 911-HELP",
+    contactNumber: "+91 7554261002",
   },
   {
     id: "cardiology",
@@ -77,10 +76,9 @@ const departments = [
       "Heart transplant program",
       "Cardiac imaging center",
     ],
-    image:
-      "https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/Cardiac-Surgery.jpg",
     availability: "Mon-Fri 8AM-6PM, Emergency 24/7",
-    contactNumber: "+1 (555) 123-HEART",
+    contactNumber: "+91 7554261002",
   },
   {
     id: "neurology",
@@ -102,10 +100,9 @@ const departments = [
       "Comprehensive stroke center",
       "Neuro ICU",
     ],
-    image:
-      "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/Neurology-4.jpg",
     availability: "Mon-Fri 8AM-5PM, Emergency 24/7",
-    contactNumber: "+1 (555) 123-NEURO",
+    contactNumber: "+91 7554261002",
   },
   {
     id: "pediatrics",
@@ -127,10 +124,9 @@ const departments = [
       "Child-friendly environment",
       "Family-centered care",
     ],
-    image:
-      "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "gallery/Pediatrics OPD Director_s.jpg",
     availability: "Mon-Sat 8AM-8PM, NICU 24/7",
-    contactNumber: "+1 (555) 123-KIDS",
+    contactNumber: "+91 7554261002",
   },
   {
     id: "orthopedics",
@@ -153,10 +149,9 @@ const departments = [
       "Sports injury clinic",
       "Rehabilitation center",
     ],
-    image:
-      "https://images.pexels.com/photos/4386442/pexels-photo-4386442.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "orthopedic-4.jpg",
     availability: "Mon-Fri 7AM-6PM, Emergency 24/7",
-    contactNumber: "+1 (555) 123-BONES",
+    contactNumber: "+91 7554261002",
   },
   {
     id: "gynecology",
@@ -178,10 +173,9 @@ const departments = [
       "Minimally invasive surgery",
       "Breastfeeding support",
     ],
-    image:
-      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/gallery/Gynae OT.jpg",
     availability: "Mon-Sat 8AM-6PM, Delivery 24/7",
-    contactNumber: "+1 (555) 123-WOMEN",
+    contactNumber: "+91 7554261002",
   },
 ];
 
@@ -359,7 +353,7 @@ export default function Services() {
       </section>
 
       {/* Main Services */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -487,11 +481,171 @@ export default function Services() {
                           </div>
 
                           <div className="flex space-x-4">
-                            <Button className="flex-1">
+                            <Button
+                              className="flex-1"
+                              onClick={() => window.open("/contact", "_blank")}
+                            >
                               <Calendar className="w-4 h-4 mr-2" />
                               Book Appointment
                             </Button>
-                            <Button variant="outline" className="flex-1">
+                            <Button
+                              variant="outline"
+                              className="flex-1"
+                              onClick={() => window.open("tel:+917554261002")}
+                            >
+                              <Phone className="w-4 h-4 mr-2" />
+                              Call Department
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </div>
+                  </Card>
+                </motion.div>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+      </section> */}
+
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Medical Departments
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Our specialized departments offer expert care across all major
+              medical disciplines
+            </p>
+          </motion.div>
+
+          <Tabs defaultValue="emergency" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 mb-8 h-auto p-1">
+              {departments.map((dept) => (
+                <TabsTrigger
+                  key={dept.id}
+                  value={dept.id}
+                  className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 data-[state=active]:bg-blue-100 p-3 h-auto min-h-[60px] text-xs sm:text-sm"
+                >
+                  <dept.icon className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-center leading-tight">{dept.name}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            {departments.map((dept) => (
+              <TabsContent key={dept.id} value={dept.id}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Card className="overflow-hidden shadow-lg">
+                    <div className="grid lg:grid-cols-2 gap-0">
+                      <div className="aspect-video lg:aspect-auto relative">
+                        <Image
+                          src={dept.image}
+                          alt={dept.name}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute bottom-4 left-4 text-white">
+                          <div
+                            className={`w-12 h-12 ${dept.color} rounded-full flex items-center justify-center mb-2`}
+                          >
+                            <dept.icon className="w-6 h-6 text-white" />
+                          </div>
+                          <h3 className="text-2xl font-bold">{dept.name}</h3>
+                        </div>
+                      </div>
+
+                      <CardContent className="p-8">
+                        <p className="text-lg text-gray-600 mb-6">
+                          {dept.description}
+                        </p>
+
+                        <div className="grid md:grid-cols-2 gap-6 mb-6">
+                          <div>
+                            <h4 className="font-semibold text-lg mb-3">
+                              Services Offered
+                            </h4>
+                            <ul className="space-y-2">
+                              {dept.services.map((service, idx) => (
+                                <li
+                                  key={idx}
+                                  className="flex items-start space-x-2"
+                                >
+                                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                                  <span className="text-gray-600">
+                                    {service}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div>
+                            <h4 className="font-semibold text-lg mb-3">
+                              Key Features
+                            </h4>
+                            <ul className="space-y-2">
+                              {dept.features.map((feature, idx) => (
+                                <li
+                                  key={idx}
+                                  className="flex items-start space-x-2"
+                                >
+                                  <Award className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                                  <span className="text-gray-600">
+                                    {feature}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div className="border-t pt-6">
+                          <div className="grid md:grid-cols-2 gap-4 mb-4">
+                            <div className="flex items-center space-x-2">
+                              <Clock className="w-5 h-5 text-gray-500" />
+                              <div>
+                                <p className="font-medium">Availability</p>
+                                <p className="text-sm text-gray-600">
+                                  {dept.availability}
+                                </p>
+                              </div>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <Phone className="w-5 h-5 text-gray-500" />
+                              <div>
+                                <p className="font-medium">Contact</p>
+                                <p className="text-sm text-gray-600">
+                                  {dept.contactNumber}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                            <Button
+                              className="flex-1"
+                              onClick={() => window.open("/contact", "_blank")}
+                            >
+                              <Calendar className="w-4 h-4 mr-2" />
+                              Book Appointment
+                            </Button>
+                            <Button
+                              variant="outline"
+                              className="flex-1"
+                              onClick={() => window.open("tel:+917554261002")}
+                            >
                               <Phone className="w-4 h-4 mr-2" />
                               Call Department
                             </Button>
@@ -626,37 +780,6 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Need Medical Care?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Our expert medical team is ready to provide you with the highest
-              quality care. Contact us today to schedule your appointment.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Button size="lg" variant="secondary">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Appointment
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-white border-white hover:bg-white hover:text-blue-600"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Us Now
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

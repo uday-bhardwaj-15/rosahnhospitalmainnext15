@@ -40,8 +40,8 @@ const contactInfo = [
     title: "Phone Numbers",
     items: [
       { label: "Main Reception", value: "+91 9111222234" },
-      // { label: "Emergency", value: "+1 (555) 911-HELP" },
-      // { label: "Appointments", value: "+1 (555) 123-BOOK" },
+      { label: "Emergency", value: "+91 7554261002" },
+      { label: "Emergency", value: "+91 7024144851" },
     ],
   },
   {

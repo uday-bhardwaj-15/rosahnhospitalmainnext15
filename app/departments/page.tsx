@@ -443,8 +443,7 @@ const departments = [
     description:
       "Comprehensive heart care with advanced cardiac procedures and treatments for all cardiovascular conditions.",
     icon: Heart,
-    image:
-      "https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/Cardiac-Surgery.jpg",
     head: "Dr. Michael Chen",
     doctorCount: 8,
     services: [
@@ -455,7 +454,7 @@ const departments = [
     ],
     established: "2015",
     availability: "24/7 Emergency, Mon-Fri 8AM-6PM",
-    phone: "+1 (555) 123-HEART",
+    phone: "+91 7554261002",
     color: "bg-red-500",
     detailedInfo: {
       overview:
@@ -488,8 +487,7 @@ const departments = [
     description:
       "Advanced neurological care for brain and spine conditions with cutting-edge technology.",
     icon: Brain,
-    image:
-      "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/Neurology-4.jpg",
     head: "Dr. Sanjana Gupta",
     doctorCount: 6,
     services: [
@@ -500,7 +498,7 @@ const departments = [
     ],
     established: "2016",
     availability: "Mon-Fri 8AM-5PM, Emergency 24/7",
-    phone: "+1 (555) 123-NEURO",
+    phone: "+91 7554261002",
     color: "bg-purple-500",
     detailedInfo: {
       overview:
@@ -533,8 +531,7 @@ const departments = [
     description:
       "Specialized care for children from birth to adolescence with family-centered approach.",
     icon: Baby,
-    image:
-      "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "gallery/Pediatrics OPD Director_s.jpg",
     head: "Dr. Sarah Johnson",
     doctorCount: 5,
     services: [
@@ -545,7 +542,7 @@ const departments = [
     ],
     established: "2017",
     availability: "Mon-Sat 8AM-8PM, NICU 24/7",
-    phone: "+1 (555) 123-KIDS",
+    phone: "+91 7554261002",
     color: "bg-pink-500",
     detailedInfo: {
       overview:
@@ -578,8 +575,7 @@ const departments = [
     description:
       "Complete bone, joint, and muscle care with advanced treatments and rehabilitation.",
     icon: Bone,
-    image:
-      "https://images.pexels.com/photos/4386442/pexels-photo-4386442.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/orthopedic-4.jpg",
     head: "Dr. James Wilson",
     doctorCount: 7,
     services: [
@@ -590,7 +586,7 @@ const departments = [
     ],
     established: "2018",
     availability: "Mon-Fri 7AM-6PM, Emergency 24/7",
-    phone: "+1 (555) 123-BONES",
+    phone: "+91 7554261002",
     color: "bg-blue-500",
     detailedInfo: {
       overview:
@@ -623,8 +619,7 @@ const departments = [
     description:
       "Comprehensive women's health and maternity services with personalized care.",
     icon: Heart,
-    image:
-      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/gallery/Gynae OT.jpg",
     head: "Dr. Sherry Ross",
     doctorCount: 6,
     services: [
@@ -635,7 +630,7 @@ const departments = [
     ],
     established: "2016",
     availability: "Mon-Sat 8AM-6PM, Delivery 24/7",
-    phone: "+1 (555) 123-WOMEN",
+    phone: "+91 7554261002",
     color: "bg-teal-500",
     detailedInfo: {
       overview:
@@ -668,8 +663,7 @@ const departments = [
     description:
       "24/7 emergency care with state-of-the-art trauma center and critical care.",
     icon: Stethoscope,
-    image:
-      "https://images.pexels.com/photos/8845216/pexels-photo-8845216.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    image: "/gallery/Emergency Room.jpg",
     head: "Dr. Robert Martinez",
     doctorCount: 12,
     services: [
@@ -680,7 +674,7 @@ const departments = [
     ],
     established: "2015",
     availability: "24/7",
-    phone: "+1 (555) 911-HELP",
+    phone: "+91 7554261002",
     color: "bg-red-600",
     detailedInfo: {
       overview:
@@ -708,7 +702,6 @@ const departments = [
     },
   },
 ];
-
 type Department = (typeof departments)[number];
 
 export default function Departments() {
@@ -787,7 +780,7 @@ export default function Departments() {
                 <SelectContent>
                   <SelectItem value="name">Name</SelectItem>
                   <SelectItem value="doctors">Doctor Count</SelectItem>
-                  <SelectItem value="established">Established</SelectItem>
+                  {/* <SelectItem value="established">Established</SelectItem> */}
                 </SelectContent>
               </Select>
             </div>
@@ -824,11 +817,11 @@ export default function Departments() {
                       </div>
                       <h3 className="text-xl font-bold">{department.name}</h3>
                     </div>
-                    <div className="absolute top-4 right-4">
+                    {/* <div className="absolute top-4 right-4">
                       <Badge className="bg-white/20 text-white border-white/30">
                         Est. {department.established}
                       </Badge>
-                    </div>
+                    </div> */}
                   </div>
 
                   <CardContent className="p-6">
@@ -837,16 +830,16 @@ export default function Departments() {
                     </p>
 
                     <div className="space-y-3 mb-4">
-                      <div className="flex items-center justify-between text-sm">
+                      {/* <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-500">Department Head:</span>
                         <span className="font-medium">{department.head}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
+                      </div> */}
+                      {/* <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-500">Doctors:</span>
                         <span className="font-medium">
                           {department.doctorCount}
                         </span>
-                      </div>
+                      </div> */}
                       <div className="flex items-center space-x-2 text-sm text-gray-600">
                         <Clock className="w-4 h-4" />
                         <span>{department.availability}</span>
@@ -880,7 +873,11 @@ export default function Departments() {
                     </div>
 
                     <div className="flex space-x-2">
-                      <Button className="flex-1" size="sm">
+                      <Button
+                        className="flex-1"
+                        size="sm"
+                        onClick={() => window.open("/contact", "_blank")}
+                      >
                         <Calendar className="w-4 h-4 mr-2" />
                         Book Appointment
                       </Button>
@@ -984,24 +981,24 @@ export default function Departments() {
                     Department Information
                   </h4>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
+                    {/* <div className="flex justify-between">
                       <span className="text-gray-600">Head of Department:</span>
                       <span className="font-medium">
                         {selectedDepartment.head}
                       </span>
-                    </div>
+                    </div> */}
                     <div className="flex justify-between">
                       <span className="text-gray-600">Total Doctors:</span>
                       <span className="font-medium">
                         {selectedDepartment.doctorCount}
                       </span>
                     </div>
-                    <div className="flex justify-between">
+                    {/* <div className="flex justify-between">
                       <span className="text-gray-600">Established:</span>
                       <span className="font-medium">
                         {selectedDepartment.established}
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

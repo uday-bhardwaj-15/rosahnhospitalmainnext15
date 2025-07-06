@@ -66,7 +66,7 @@ export default function HospitalSection() {
                 <span className="text-orange-600">आयुष्मान भारत योजना</span>
               </h2>
               <p className="text-lg text-green-600 font-semibold">
-                Pradhan Mantri Jan Arogya Yojana
+                Ayushman Bharat Yojana
               </p>
             </div>
           </div>
