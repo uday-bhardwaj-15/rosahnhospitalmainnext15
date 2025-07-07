@@ -413,6 +413,8 @@ import {
   Filter,
   X,
   Info,
+  Activity,
+  Scissors,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -483,45 +485,81 @@ const departments = [
   },
   {
     id: 2,
-    name: "Neurology",
+    name: "Onco Surgery",
     description:
-      "Advanced neurological care for brain and spine conditions with cutting-edge technology.",
-    icon: Brain,
-    image: "/Neurology-4.jpg",
-    head: "Dr. Sanjana Gupta",
-    doctorCount: 6,
+      "Comprehensive cancer surgical care with advanced minimally invasive techniques and multidisciplinary tumor management.",
+    icon: Scissors,
+    image: "/OCNO.jpeg",
+    head: "Dr. Rajesh Kumar",
+    doctorCount: 8,
     services: [
-      "Brain Surgery",
-      "Spine Surgery",
-      "Stroke Treatment",
-      "Epilepsy Management",
+      "Tumor Resection",
+      "Minimally Invasive Surgery",
+      "Robotic Surgery",
+      "Cancer Staging",
+      "Oncoplastic Surgery",
+      "Palliative Surgery",
     ],
-    established: "2016",
-    availability: "Mon-Fri 8AM-5PM, Emergency 24/7",
+    established: "2018",
+    availability: "Mon-Fri 7AM-6PM, Emergency 24/7",
     phone: "+91 7554261002",
-    color: "bg-purple-500",
+    color: "bg-orange-500",
     detailedInfo: {
       overview:
-        "Our Neurology department provides comprehensive care for disorders of the brain, spinal cord, and nervous system. We combine advanced diagnostic capabilities with innovative treatment options to deliver exceptional neurological care.",
+        "Our Onco Surgery department specializes in comprehensive surgical treatment of all types of cancers. We employ state-of-the-art surgical techniques including minimally invasive and robotic surgery to ensure optimal outcomes with faster recovery times.",
       facilities: [
-        "Advanced MRI and CT Imaging",
-        "Neurological ICU",
-        "Epilepsy Monitoring Unit",
-        "Stroke Unit",
-        "Neurosurgical Operating Suites",
+        "Advanced Robotic Surgery Suite",
+        "Minimally Invasive Surgery Center",
+        "Intraoperative Imaging Systems",
+        "Oncology ICU",
+        "Specialized Recovery Units",
+        "Pathology Laboratory",
+        "Radiation Therapy Integration",
       ],
       specialties: [
-        "Stroke Care",
-        "Epilepsy Treatment",
-        "Movement Disorders",
-        "Neurosurgery",
-        "Neuro-rehabilitation",
+        "Gastrointestinal Cancer Surgery",
+        "Breast Cancer Surgery",
+        "Lung Cancer Surgery",
+        "Colorectal Cancer Surgery",
+        "Hepatobiliary Surgery",
+        "Gynecologic Oncology",
+        "Urologic Oncology",
+        "Head & Neck Cancer Surgery",
       ],
       achievements: [
-        "Comprehensive Stroke Center",
-        "Level 4 Epilepsy Center",
-        "Advanced Neurosurgery Program",
-        "Research Excellence Award",
+        "Accredited Cancer Center",
+        "Robotic Surgery Excellence Award",
+        "Minimally Invasive Surgery Center of Excellence",
+        "Multidisciplinary Tumor Board Recognition",
+        "Research Publication Leader",
+        "Patient Safety Award for Surgical Outcomes",
+      ],
+      treatments: [
+        "Laparoscopic Cancer Surgery",
+        "Robotic-Assisted Surgery",
+        "Cytoreductive Surgery",
+        "Sentinel Lymph Node Biopsy",
+        "Oncoplastic Breast Surgery",
+        "HIPEC (Hyperthermic Intraperitoneal Chemotherapy)",
+        "Liver Resection",
+        "Pancreaticoduodenectomy",
+      ],
+      equipment: [
+        "Da Vinci Surgical System",
+        "Advanced Laparoscopic Equipment",
+        "Intraoperative Ultrasound",
+        "Fluorescence Imaging Systems",
+        "Surgical Navigation Systems",
+        "Cryoablation Technology",
+      ],
+      patientCare: [
+        "Pre-operative Counseling",
+        "Multidisciplinary Team Approach",
+        "Pain Management Protocols",
+        "Nutritional Support",
+        "Psychological Support Services",
+        "Follow-up Care Programs",
+        "Survivorship Programs",
       ],
     },
   },
@@ -533,7 +571,7 @@ const departments = [
     icon: Baby,
     image: "gallery/Pediatrics OPD Director_s.jpg",
     head: "Dr. Sarah Johnson",
-    doctorCount: 5,
+    doctorCount: 15,
     services: [
       "Newborn Care",
       "NICU Level 2",
@@ -577,7 +615,7 @@ const departments = [
     icon: Bone,
     image: "/orthopedic-4.jpg",
     head: "Dr. James Wilson",
-    doctorCount: 7,
+    doctorCount: 13,
     services: [
       "Joint Replacement",
       "Arthroscopy",
@@ -621,7 +659,7 @@ const departments = [
     icon: Heart,
     image: "/gallery/Gynae OT.jpg",
     head: "Dr. Sherry Ross",
-    doctorCount: 6,
+    doctorCount: 14,
     services: [
       "Prenatal Care",
       "Labor & Delivery",
@@ -665,7 +703,7 @@ const departments = [
     icon: Stethoscope,
     image: "/gallery/Emergency Room.jpg",
     head: "Dr. Robert Martinez",
-    doctorCount: 12,
+    doctorCount: 11,
     services: [
       "Trauma Care",
       "Critical Care",
@@ -706,7 +744,7 @@ type Department = (typeof departments)[number];
 
 export default function Departments() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState("name");
+  const [sortBy, setSortBy] = useState("doctors");
   const [selectedDepartment, setSelectedDepartment] =
     useState<Department | null>(null);
 

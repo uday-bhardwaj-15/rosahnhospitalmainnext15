@@ -17,6 +17,8 @@ import {
   ArrowRight,
   Phone,
   Calendar,
+  Activity,
+  Scissors,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,79 +33,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 
 const departments = [
-  {
-    id: "emergency",
-    name: "Emergency Services",
-    icon: Shield,
-    description: "24/7 emergency care with state-of-the-art trauma center",
-    color: "bg-red-500",
-    services: [
-      "Trauma Care",
-      "Critical Care Unit",
-      "Emergency Surgery",
-      "Cardiac Emergency",
-      "Stroke Care",
-      "Pediatric Emergency",
-    ],
-    features: [
-      "10-minute response time",
-      "Level 1 Trauma Center",
-      "Helicopter landing pad",
-      "Advanced life support ambulances",
-    ],
-    image: "/gallery/Emergency Room.jpg",
-    availability: "24/7",
-    contactNumber: "+91 7554261002",
-  },
-  {
-    id: "cardiology",
-    name: "Cardiology",
-    icon: Heart,
-    description:
-      "Comprehensive heart care from prevention to advanced interventions",
-    color: "bg-red-600",
-    services: [
-      "Cardiac Catheterization",
-      "Angioplasty",
-      "Pacemaker Implantation",
-      "Heart Surgery",
-      "Cardiac Rehabilitation",
-      "Preventive Cardiology",
-    ],
-    features: [
-      "Cath lab available 24/7",
-      "Minimally invasive procedures",
-      "Heart transplant program",
-      "Cardiac imaging center",
-    ],
-    image: "/Cardiac-Surgery.jpg",
-    availability: "Mon-Fri 8AM-6PM, Emergency 24/7",
-    contactNumber: "+91 7554261002",
-  },
-  {
-    id: "neurology",
-    name: "Neurology & Neurosurgery",
-    icon: Brain,
-    description: "Advanced neurological care for brain and spine conditions",
-    color: "bg-purple-600",
-    services: [
-      "Brain Surgery",
-      "Spine Surgery",
-      "Stroke Treatment",
-      "Epilepsy Management",
-      "Movement Disorders",
-      "Neurological Rehabilitation",
-    ],
-    features: [
-      "Gamma Knife radiosurgery",
-      "Minimally invasive spine surgery",
-      "Comprehensive stroke center",
-      "Neuro ICU",
-    ],
-    image: "/Neurology-4.jpg",
-    availability: "Mon-Fri 8AM-5PM, Emergency 24/7",
-    contactNumber: "+91 7554261002",
-  },
   {
     id: "pediatrics",
     name: "Pediatrics & NICU",
@@ -126,6 +55,30 @@ const departments = [
     ],
     image: "gallery/Pediatrics OPD Director_s.jpg",
     availability: "Mon-Sat 8AM-8PM, NICU 24/7",
+    contactNumber: "+91 7554261002",
+  },
+  {
+    id: "gynecology",
+    name: "Gynecology & Obstetrics",
+    icon: Heart,
+    description: "Comprehensive women's health and maternity services",
+    color: "bg-teal-600",
+    services: [
+      "Prenatal Care",
+      "Labor & Delivery",
+      "High-Risk Pregnancy",
+      "Gynecological Surgery",
+      "Fertility Treatment",
+      "Menopause Management",
+    ],
+    features: [
+      "LDRP suites",
+      "High-risk pregnancy unit",
+      "Minimally invasive surgery",
+      "Breastfeeding support",
+    ],
+    image: "/gallery/Gynae OT.jpg",
+    availability: "Mon-Sat 8AM-6PM, Delivery 24/7",
     contactNumber: "+91 7554261002",
   },
   {
@@ -154,27 +107,81 @@ const departments = [
     contactNumber: "+91 7554261002",
   },
   {
-    id: "gynecology",
-    name: "Gynecology & Obstetrics",
-    icon: Heart,
-    description: "Comprehensive women's health and maternity services",
-    color: "bg-teal-600",
+    id: "emergency",
+    name: "Emergency Services",
+    icon: Shield,
+    description: "24/7 emergency care with state-of-the-art trauma center",
+    color: "bg-red-500",
     services: [
-      "Prenatal Care",
-      "Labor & Delivery",
-      "High-Risk Pregnancy",
-      "Gynecological Surgery",
-      "Fertility Treatment",
-      "Menopause Management",
+      "Trauma Care",
+      "Critical Care Unit",
+      "Emergency Surgery",
+      "Cardiac Emergency",
+      "Stroke Care",
+      "Pediatric Emergency",
     ],
     features: [
-      "LDRP suites",
-      "High-risk pregnancy unit",
-      "Minimally invasive surgery",
-      "Breastfeeding support",
+      "10-minute response time",
+      "Level 1 Trauma Center",
+      "Helicopter landing pad",
+      "Advanced life support ambulances",
     ],
-    image: "/gallery/Gynae OT.jpg",
-    availability: "Mon-Sat 8AM-6PM, Delivery 24/7",
+    image: "/gallery/Emergency Room.jpg",
+    availability: "24/7",
+    contactNumber: "+91 7554261002",
+  },
+
+  {
+    id: "onco-surgery",
+    name: "Onco Surgery",
+    icon: Scissors, // or Scissors, Zap, Target from lucide-react
+    description:
+      "Comprehensive cancer surgical care with advanced minimally invasive techniques",
+    color: "bg-orange-600",
+    services: [
+      "Tumor Resection Surgery",
+      "Minimally Invasive Cancer Surgery",
+      "Robotic Oncology Surgery",
+      "Breast Cancer Surgery",
+      "Gastrointestinal Cancer Surgery",
+      "Oncoplastic Surgery",
+    ],
+    features: [
+      "Da Vinci Robotic Surgery System",
+      "Minimally invasive laparoscopic surgery",
+      "Multidisciplinary tumor board",
+      "Oncology ICU",
+      "HIPEC (Heated Chemotherapy)",
+      "Intraoperative imaging",
+    ],
+    image: "/OCNO.jpeg",
+    availability: "Mon-Fri 7AM-6PM, Emergency 24/7",
+    contactNumber: "+91 7554261002",
+  },
+
+  {
+    id: "cardiology",
+    name: "Cardiology",
+    icon: Heart,
+    description:
+      "Comprehensive heart care from prevention to advanced interventions",
+    color: "bg-red-600",
+    services: [
+      "Cardiac Catheterization",
+      "Angioplasty",
+      "Pacemaker Implantation",
+      "Heart Surgery",
+      "Cardiac Rehabilitation",
+      "Preventive Cardiology",
+    ],
+    features: [
+      "Cath lab available 24/7",
+      "Minimally invasive procedures",
+      "Heart transplant program",
+      "Cardiac imaging center",
+    ],
+    image: "/Cardiac-Surgery.jpg",
+    availability: "Mon-Fri 8AM-6PM, Emergency 24/7",
     contactNumber: "+91 7554261002",
   },
 ];
@@ -295,9 +302,13 @@ export default function Services() {
                   <p className="text-gray-600 mb-4">
                     24/7 emergency care available
                   </p>
-                  <Button variant="destructive" className="w-full">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call 911
+                  <Button
+                    variant="destructive"
+                    className="w-full text-white"
+                    onClick={() => window.open("tel:+917554261002")}
+                  >
+                    <Phone className="w-4 h-4 mr-2 " />
+                    Call 917554261002
                   </Button>
                 </CardContent>
               </Card>
@@ -735,7 +746,7 @@ export default function Services() {
       </section>
 
       {/* Support Services */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -777,7 +788,7 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
     </div>

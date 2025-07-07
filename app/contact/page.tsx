@@ -48,9 +48,9 @@ const contactInfo = [
     icon: Mail,
     title: "Email Addresses",
     items: [
-      { label: "General Inquiries", value: "info@roshanhospital.com" },
-      { label: "Appointments", value: "appointments@roshanhospital.com" },
-      { label: "Patient Records", value: "records@roshanhospital.com" },
+      { label: "General Inquiries", value: "infoatroshanhospital@gmail.com" },
+      // { label: "Appointments", value: "appointments@roshanhospital.com" },
+      // { label: "Patient Records", value: "records@roshanhospital.com" },
     ],
   },
   {
@@ -87,12 +87,11 @@ const departments = [
 
 const reasons = [
   "Schedule Appointment",
-  "Medical Records Request",
-  "Billing Question",
+
   "Insurance Inquiry",
   "General Information",
   "Complaint/Feedback",
-  "Emergency (Call 911)",
+  "Emergency ",
   "Other",
 ];
 
@@ -111,44 +110,64 @@ export default function Contact() {
 
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (formData.isEmergency) {
       toast({
         title: "Emergency Situation Detected",
         description:
-          "For emergencies, please call 911 immediately or visit our emergency department.",
+          "For emergencies, please call 7554261002 immediately or visit our emergency department.",
         variant: "destructive",
       });
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Message Sent Successfully",
-      description:
-        "Thank you for contacting us. We'll get back to you within 24 hours.",
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Reset form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      department: "",
-      reason: "",
-      message: "",
-      preferredContact: "email",
-      isEmergency: false,
-    });
+      const result = await res.json();
+      // console.log(result);
+      if (res.ok) {
+        toast({
+          title: "Message Sent Successfully",
+          description:
+            "Thank you for contacting us. We'll get back to you within 24 hours.",
+        });
+
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          department: "",
+          reason: "",
+          message: "",
+          preferredContact: "email",
+          isEmergency: false,
+        });
+      } else {
+        throw new Error(result.message || "Something went wrong");
+      }
+    } catch (err) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
-
-  const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
+  // console.log(formData);
   return (
     <div className="min-h-screen bg-gradient-to-br overflow-x-hidden from-blue-50 via-white to-green-50">
       {/* Hero Section */}
@@ -174,7 +193,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="font-semibold">
-              🚨 FOR MEDICAL EMERGENCIES: Call 911 or visit our Emergency
+              🚨 FOR MEDICAL EMERGENCIES: Call 7554261002 or visit our Emergency
               Department immediately
             </p>
           </div>
@@ -408,7 +427,12 @@ export default function Contact() {
                       </div>
                     </div> */}
 
-                    <Button type="submit" className="w-full" size="lg">
+                    <Button
+                      type="submit"
+                      className="w-full"
+                      size="lg"
+                      onClick={handleSubmit}
+                    >
                       <Send className="w-4 h-4 mr-2" />
                       Send Message
                     </Button>

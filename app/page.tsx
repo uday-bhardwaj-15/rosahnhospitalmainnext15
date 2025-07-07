@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
@@ -25,6 +25,8 @@ import {
   Ambulance,
   Church,
   Shield,
+  X,
+  User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,14 +51,16 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HospitalSection from "@/components/modisection";
+import EmpanelmentSection from "@/components/EmpanelmentSection";
 
 const services = [
   {
-    title: "Place of Worship ",
-    subtitle: "Quiet space for prayers and reflection",
-    icon: Church,
-    bgColor: "bg-gradient-to-br from-indigo-300 to-indigo-400",
-    iconColor: "text-indigo-700",
+    title: "24/7 Emergency Critical Care",
+    subtitle:
+      "Emergency and intensive care for critical conditions, available round the clock",
+    icon: Shield, // Changed from Utensils to Shield for an emergency logo
+    bgColor: "bg-gradient-to-br from-orange-300 to-orange-400",
+    iconColor: "text-orange-700",
   },
   {
     title: "24/7 Ambulance Services",
@@ -66,18 +70,18 @@ const services = [
     iconColor: "text-red-700",
   },
   {
-    title: "Hospital Canteen",
-    subtitle: "Nutritious meals for patients & visitors",
-    icon: Utensils,
-    bgColor: "bg-gradient-to-br from-orange-300 to-orange-400",
-    iconColor: "text-orange-700",
-  },
-  {
     title: "24/7 Medicines",
     subtitle: "Essentials at your doorstep",
     icon: Pill,
     bgColor: "bg-gradient-to-br from-pink-300 to-pink-400",
     iconColor: "text-pink-700",
+  },
+  {
+    title: "Place of Worship ",
+    subtitle: "Quiet space for prayers and reflection",
+    icon: Church,
+    bgColor: "bg-gradient-to-br from-indigo-300 to-indigo-400",
+    iconColor: "text-indigo-700",
   },
 ];
 
@@ -93,18 +97,11 @@ const specialties = [
 
 const doctors = [
   {
-    name: "Dr. Jitendra piple",
-    specialty: "MD & Pediatrician",
-    image: "doctors/WhatsApp Image 2025-07-04 at 13.07.11_0fcfaabe.jpg",
-    rating: 4.9,
-    experience: "",
-  },
-  {
     name: "Dr. Rakesh Sukheja MD & Director",
     specialty: "Senior pediatrician",
     image: "doctors/WhatsApp Image 2025-07-04 at 13.08.24_90bd137b.jpg",
     rating: 4.8,
-    experience: "27 years",
+    experience: "30+ years",
   },
   {
     name: "Dr. Rajni Sukheja",
@@ -112,13 +109,20 @@ const doctors = [
       "Dip G.O. NARCHI Director & Consultant gynecologist and obstetrician",
     image: "doctors/Madam Photo3.jpg",
     rating: 4.9,
-    experience: "27 years",
+    experience: "25+ years",
   },
   {
-    name: "Dr. Arpit Bhargav",
-    specialty: "MD & Pulmonologist",
-    image:
-      "https://images.pexels.com/photos/5452230/pexels-photo-5452230.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    name: "Dr. Richa tiwari",
+    specialty: "MS consultant gynecologist and obstetrician",
+    image: "/doctors/WhatsApp Image 2025-07-04 at 14.34.26_0f33f920.jpg",
+    rating: 4.9,
+    experience: "",
+  },
+
+  {
+    name: "Dr. Sanjeev Jain",
+    specialty: "DCH pediatrician",
+    image: "/doctors/WhatsApp Image 2025-07-04 at 13.06.17_8b0013f6.jpg",
     rating: 4.7,
     experience: "",
   },
@@ -189,6 +193,99 @@ Thanks lalit,Gautam and Rohan for their extended support.`,
     location: "",
   },
 ];
+const blogPosts = [
+  {
+    id: 1,
+    title: "Advanced Pediatric Surgery: Insights from Dr. Saket Jha",
+    excerpt:
+      "Explore neonatal and congenital surgeries with Dr. Saket Jha, a leading expert at Roshan Hospital.",
+    category: "Pediatric Insight",
+    gradient: "from-green-400 to-blue-500",
+    categoryColor: "bg-green-100 text-green-700",
+    author: "Dr. Saket Jha",
+    date: "December 15, 2024",
+    readTime: "5 min read",
+    content: `
+      <h3 class="text-xl font-semibold mb-4">Understanding Pediatric Surgery Excellence</h3>
+      <p class="mb-4">Pediatric surgery requires specialized expertise and a gentle approach. At Roshan Hospital, Dr. Saket Jha brings years of experience in treating the youngest patients with complex surgical needs.</p>
+      
+      <h4 class="text-lg font-semibold mb-3">Key Areas of Expertise:</h4>
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li>Neonatal surgery for newborns with congenital conditions</li>
+        <li>Minimally invasive laparoscopic procedures</li>
+        <li>Congenital anomaly corrections</li>
+        <li>Emergency pediatric surgical interventions</li>
+      </ul>
+      
+      <p class="mb-4">Our pediatric surgery department is equipped with state-of-the-art technology designed specifically for children, ensuring the highest standards of care and safety.</p>
+      
+      <blockquote class="border-l-4 border-green-500 pl-4 italic text-gray-600 mb-4">
+        "Every child deserves the best possible surgical care. Our approach combines advanced medical techniques with compassionate care to ensure optimal outcomes for our young patients." - Dr. Saket Jha
+      </blockquote>
+    `,
+  },
+  {
+    id: 2,
+    title: "Managing Pain with Precision: Dr. Sandesh Yadav's Approach",
+    excerpt:
+      "Discover Dr. Yadav's techniques in regional anesthesia and chronic pain relief at Roshan Hospital.",
+    category: "Pain Management",
+    gradient: "from-purple-400 to-pink-500",
+    categoryColor: "bg-purple-100 text-purple-700",
+    author: "Dr. Sandesh Yadav",
+    date: "December 10, 2024",
+    readTime: "4 min read",
+    content: `
+      <h3 class="text-xl font-semibold mb-4">Revolutionary Pain Management Techniques</h3>
+      <p class="mb-4">Pain management has evolved significantly with modern medical advances. Dr. Sandesh Yadav specializes in providing comprehensive pain relief solutions that improve quality of life for patients.</p>
+      
+      <h4 class="text-lg font-semibold mb-3">Treatment Approaches:</h4>
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li>Regional anesthesia for surgical procedures</li>
+        <li>Chronic pain management protocols</li>
+        <li>Interventional pain procedures</li>
+        <li>Multimodal analgesia techniques</li>
+      </ul>
+      
+      <p class="mb-4">Our pain management department utilizes cutting-edge technology and evidence-based practices to ensure patients receive the most effective treatment with minimal side effects.</p>
+      
+      <blockquote class="border-l-4 border-purple-500 pl-4 italic text-gray-600 mb-4">
+        "Effective pain management is not just about medication - it's about understanding each patient's unique needs and providing personalized care that addresses both physical and emotional aspects of pain." - Dr. Sandesh Yadav
+      </blockquote>
+    `,
+  },
+  {
+    id: 3,
+    title: "Cardiac Excellence with Dr. Sumit Bhatnagar",
+    excerpt:
+      "Learn how Dr. Bhatnagar is transforming interventional cardiology and heart care at Roshan Hospital.",
+    category: "Heart Health",
+    gradient: "from-red-400 to-orange-500",
+    categoryColor: "bg-red-100 text-red-700",
+    author: "Dr. Sumit Bhatnagar",
+    date: "December 5, 2024",
+    readTime: "6 min read",
+    avatar: "/doctors/WhatsApp Image 2025-07-04 at 13.04.54_488f52d4.jpg",
+    content: `
+      <h3 class="text-xl font-semibold mb-4">Advancing Cardiac Care Through Innovation</h3>
+      <p class="mb-4">Cardiovascular diseases remain a leading health concern globally. Dr. Sumit Bhatnagar brings expertise in interventional cardiology to provide comprehensive heart care at Roshan Hospital.</p>
+      
+      <h4 class="text-lg font-semibold mb-3">Specialized Services:</h4>
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li>Coronary angioplasty and stenting procedures</li>
+        <li>Heart attack emergency interventions</li>
+        <li>Preventive cardiology consultations</li>
+        <li>Cardiac catheterization procedures</li>
+      </ul>
+      
+      <p class="mb-4">Our cardiac care unit is equipped with advanced catheterization labs and monitoring systems to provide 24/7 emergency cardiac services.</p>
+      
+      <blockquote class="border-l-4 border-red-500 pl-4 italic text-gray-600 mb-4">
+        "Heart health is about prevention as much as it is about treatment. We focus on educating patients about lifestyle changes that can prevent cardiac events while providing world-class interventional care when needed." - Dr. Sumit Bhatnagar
+      </blockquote>
+    `,
+  },
+];
 
 export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -239,6 +336,17 @@ export default function Home() {
     setCurrentTestimonial(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
+  };
+  const [selectedBlog, setSelectedBlog] = useState<
+    (typeof blogPosts)[0] | null
+  >(null);
+
+  const openBlogModal = (blog: (typeof blogPosts)[0]) => {
+    setSelectedBlog(blog);
+  };
+
+  const closeBlogModal = () => {
+    setSelectedBlog(null);
   };
 
   return (
@@ -427,7 +535,7 @@ export default function Home() {
                   To provide compassionate, high-quality healthcare services
                   that improve the health and well-being of our community. We
                   are committed to clinical excellence, innovation, and treating
-                  every patient with dignity and respect.
+                  every patient at affordable with dignity and respect.
                 </p>
               </div>
 
@@ -457,15 +565,6 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <Award className="w-6 h-6 text-blue-600 mt-1" />
-                    <div>
-                      <h4 className="font-semibold">Accredited Excellence</h4>
-                      <p className="text-gray-600">
-                        JCI and NABH accredited facility
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
                     <Users className="w-6 h-6 text-blue-600 mt-1" />
                     <div>
                       <h4 className="font-semibold">Expert Medical Team</h4>
@@ -488,6 +587,13 @@ export default function Home() {
                     <div>
                       <h4 className="font-semibold">Compassionate Care</h4>
                       <p className="text-gray-600">Patient-centered approach</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Award className="w-6 h-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold">Accredited Excellence</h4>
+                      <p className="text-gray-600">NABH accredited facility</p>
                     </div>
                   </div>
                 </CardContent>
@@ -546,14 +652,14 @@ export default function Home() {
                           <service.icon className="w-6 h-6" />
                         </motion.div>
                       </div>
-                      <div className="flex justify-end">
+                      {/* <div className="flex justify-end">
                         <motion.div
                           whileHover={{ x: 5 }}
                           className="w-8 h-8 bg-white/40 rounded-full flex items-center justify-center"
                         >
                           <ArrowRight className="w-4 h-4 text-gray-700" />
                         </motion.div>
-                      </div>
+                      </div> */}
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -562,7 +668,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <div className="px-4">
+        <EmpanelmentSection />
+      </div>
       <div className="px-4">
         <HospitalSection />
       </div>
@@ -911,7 +1019,7 @@ export default function Home() {
         </div>
       </section>
       {/* Blog Section */}
-      <section className="py-16 bg-white/50">
+      <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -920,98 +1028,170 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Read top articles from health experts
+              Read top articles from{" "}
+              <span className="text-blue-600">health experts</span>
             </h2>
             <p className="text-lg text-gray-600">
               Stay informed with the latest health tips and medical insights
+              from our specialists
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {/* Blog 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="hover:shadow-lg transition-shadow duration-300">
-                <div className="aspect-video bg-gradient-to-br from-green-400 to-blue-500 rounded-t-lg"></div>
-                <CardContent className="p-6">
-                  <Badge className="mb-3">Pediatric Insight</Badge>
-                  <h3 className="font-semibold text-lg mb-2">
-                    Advanced Pediatric Surgery: Insights from Dr. Saket Jha
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Explore neonatal and congenital surgeries with Dr. Saket
-                    Jha, a leading expert at Roshan Hospital.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Blog 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="hover:shadow-lg transition-shadow duration-300">
-                <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-500 rounded-t-lg"></div>
-                <CardContent className="p-6">
-                  <Badge className="mb-3">Pain Management</Badge>
-                  <h3 className="font-semibold text-lg mb-2">
-                    Managing Pain with Precision: Dr. Sandesh Yadav’s Approach
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Discover Dr. Yadav’s techniques in regional anesthesia and
-                    chronic pain relief at Roshan Hospital.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Blog 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <Avatar className="w-16 h-16">
-                      <AvatarImage src="/doctors/WhatsApp Image 2025-07-04 at 13.04.54_488f52d4.jpg" />
-                      <AvatarFallback>SB</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <h4 className="font-semibold">Dr. Sumit Bhatnagar</h4>
-                      <p className="text-sm text-gray-600">Cardiologist</p>
+            {blogPosts.map((blog, index) => (
+              <motion.div
+                key={blog.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="cursor-pointer"
+                onClick={() => openBlogModal(blog)}
+              >
+                <Card className="hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                  <div
+                    className={`aspect-video bg-gradient-to-br ${blog.gradient} rounded-t-lg relative overflow-hidden`}
+                  >
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <Badge className={`${blog.categoryColor} border-0`}>
+                        {blog.category}
+                      </Badge>
                     </div>
                   </div>
-                  <Badge className="mb-3">Heart Health</Badge>
-                  <h3 className="font-semibold text-lg mb-2">
-                    Cardiac Excellence with Dr. Sumit Bhatnagar
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Learn how Dr. Bhatnagar is transforming interventional
-                    cardiology and heart care at Roshan Hospital.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
+                  <CardContent className="p-6">
+                    {blog.avatar && (
+                      <div className="flex items-center space-x-3 mb-4">
+                        <Avatar className="w-12 h-12">
+                          <AvatarImage src={blog.avatar} />
+                          <AvatarFallback>
+                            {blog.author
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <h4 className="font-semibold text-sm">
+                            {blog.author}
+                          </h4>
+                          <p className="text-xs text-gray-600">Specialist</p>
+                        </div>
+                      </div>
+                    )}
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                      {blog.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4">{blog.excerpt}</p>
+                    <div className="flex items-center justify-between text-xs text-gray-500">
+                      <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-1">
+                          <Calendar className="w-3 h-3" />
+                          <span>{blog.date}</span>
+                        </div>
+                        <span>{blog.readTime}</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
 
-          <div className="text-center">
-            <Button size="lg">
+          {/* <div className="text-center">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
               READ ALL BLOGS
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
+
+      {/* Blog Modal */}
+      <AnimatePresence>
+        {selectedBlog && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={closeBlogModal}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div
+                className={`bg-gradient-to-r ${selectedBlog.gradient} p-6 text-white relative`}
+              >
+                <button
+                  onClick={closeBlogModal}
+                  className="absolute top-4 right-4 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+                <Badge className="bg-white/20 text-white border-0 mb-3">
+                  {selectedBlog.category}
+                </Badge>
+                <h2 className="text-2xl font-bold mb-2">
+                  {selectedBlog.title}
+                </h2>
+                <div className="flex items-center space-x-4 text-white/90">
+                  <div className="flex items-center space-x-2">
+                    <User className="w-4 h-4" />
+                    <span>{selectedBlog.author}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>{selectedBlog.date}</span>
+                  </div>
+                  <span>{selectedBlog.readTime}</span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 overflow-y-auto max-h-[60vh]">
+                <div
+                  className="prose prose-gray max-w-none"
+                  dangerouslySetInnerHTML={{ __html: selectedBlog.content }}
+                />
+              </div>
+
+              {/* Footer */}
+              {/* <div className="border-t border-gray-100 p-6 bg-gray-50">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    {selectedBlog.avatar && (
+                      <Avatar className="w-12 h-12">
+                        <AvatarImage src={selectedBlog.avatar} />
+                        <AvatarFallback>
+                          {selectedBlog.author
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </AvatarFallback>
+                      </Avatar>
+                    )}
+                    <div>
+                      <h4 className="font-semibold">{selectedBlog.author}</h4>
+                      <p className="text-sm text-gray-600">
+                        Medical Specialist at Roshan Hospital
+                      </p>
+                    </div>
+                  </div>
+                  <Button onClick={closeBlogModal}>Close Article</Button>
+                </div>
+              </div> */}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

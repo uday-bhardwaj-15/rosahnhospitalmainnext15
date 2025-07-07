@@ -17,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const quickLinks = [
@@ -88,8 +89,14 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center space-x-2 mb-6">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <Stethoscope className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center">
+                  {/* <Stethoscope className="w-5 h-5 text-white" /> */}
+                  <Image
+                    src={"/roshanhospitallogo.png"}
+                    alt="Roshan Hospital Logo"
+                    width={100}
+                    height={100}
+                  />
                 </div>
                 <span className="text-xl font-bold">Roshan Hospital</span>
               </div>

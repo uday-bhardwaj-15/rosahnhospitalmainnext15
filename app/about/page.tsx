@@ -15,6 +15,12 @@ import {
   GraduationCap,
   Award as CertificateIcon,
   Calendar,
+  CheckCircle,
+  Headphones,
+  Lightbulb,
+  Settings,
+  TrendingUp,
+  Wrench,
 } from "lucide-react";
 import {
   Card,
@@ -45,65 +51,95 @@ interface HospitalOwner {
 }
 const milestones = [
   {
-    year: "2015",
+    year: "2017",
     title: "Hospital Founded",
     description:
       "Roshan Hospital opened its doors with a vision to provide quality healthcare.",
   },
   {
-    year: "2017",
-    title: "NICU Level 2",
+    year: "2018",
+    title: "NICU Level 3",
     description: "Established state-of-the-art Neonatal Intensive Care Unit.",
   },
   {
     year: "2019",
-    title: "JCI Accreditation",
-    description:
-      "Received Joint Commission International accreditation for quality standards.",
+    title: "NABH Accreditation",
+    description: "Received NABH accreditation for quality standards.",
+  },
+  {
+    year: "2019",
+    title: "Introduced Joint replacement surgeries",
+    description: "Launched Joint replacement surgeries.",
+  },
+  {
+    year: "2020",
+    title: "Introduced ONCO (cancer) sugeries",
+    description: "Launched ONCO (cancer) sugeries.",
   },
   {
     year: "2021",
     title: "Digital Transformation",
-    description:
-      "Launched telemedicine services and electronic health records.",
+    description: "Launched electronic health records.",
   },
+
   {
     year: "2023",
-    title: "50,000+ Patients",
+    title: "50,000+ Patients Admitted Till Date",
     description: "Milestone achievement in serving the community.",
   },
   {
     year: "2025",
     title: "Center of Excellence",
     description:
-      "Recognized as a regional center for cardiac and neurological care.",
+      "Recognized as a regional center for pediatrics and gynaecology.",
   },
 ];
 
 const values = [
   {
-    icon: Heart,
-    title: "Compassionate Care",
+    number: "01",
+    icon: Headphones,
+    title: "Reliable",
     description:
-      "We treat every patient with empathy, respect, and dignity, ensuring comfort during their healthcare journey.",
+      "Take initiative and go beyond the call of duty. Deliver commitment and agreement made",
+    color: "bg-teal-300",
   },
   {
-    icon: Shield,
-    title: "Safety First",
-    description:
-      "Patient safety is our top priority with rigorous protocols and continuous quality improvement.",
+    number: "02",
+    icon: Lightbulb,
+    title: "Ownership",
+    description: "Be responsible and take pride in our actions.",
+    color: "bg-blue-600",
   },
   {
-    icon: Users,
-    title: "Team Excellence",
+    number: "03",
+    icon: TrendingUp,
+    title: "Safety",
     description:
-      "Our multidisciplinary team of experts collaborates to provide comprehensive healthcare solutions.",
+      "Look after the safety of our patients in every convenient way possible.",
+    color: "bg-yellow-400",
   },
   {
-    icon: Award,
-    title: "Clinical Excellence",
+    number: "04",
+    icon: Wrench,
+    title: "Health",
+    description: "Prioritize every patients mental and physical well being.",
+    color: "bg-red-400",
+  },
+  {
+    number: "05",
+    icon: Settings,
+    title: "Accessible Affordable & Available",
     description:
-      "We maintain the highest standards of medical practice with evidence-based treatments.",
+      "Provide all patients with the best services irrespective of their caste, color, creed, religion.",
+    color: "bg-sky-400",
+  },
+  {
+    number: "06",
+    icon: CheckCircle,
+    title: "Noble",
+    description: "To be righteous, honest and honorable",
+    color: "bg-purple-400",
   },
 ];
 
@@ -163,22 +199,22 @@ const facilities = [
 ];
 
 const accreditations = [
-  {
-    name: "Joint Commission International",
-    code: "https://www.jointcommissioninternational.org/-/media/jci/images/jci-gold-seal.png",
-  },
-  {
-    name: "ISO 9001:2015",
-    code: "https://5.imimg.com/data5/HN/QX/NC/SELLER-3364809/iso-certification-for-hospitals.jpg",
-  },
+  // {
+  //   name: "Joint Commission International",
+  //   code: "https://www.jointcommissioninternational.org/-/media/jci/images/jci-gold-seal.png",
+  // },
+  // {
+  //   name: "ISO 9001:2015",
+  //   code: "https://5.imimg.com/data5/HN/QX/NC/SELLER-3364809/iso-certification-for-hospitals.jpg",
+  // },
   {
     name: "NABH Accreditation",
     code: "/nabh-certified-colour-logo-png_seeklogo-523011.png",
   },
-  {
-    name: "NABL Certified Labs",
-    code: "https://productimages.withfloats.com/actual/6433ba9a1d771d0001940026.png",
-  },
+  // {
+  //   name: "NABL Certified Labs",
+  //   code: "https://productimages.withfloats.com/actual/6433ba9a1d771d0001940026.png",
+  // },
 ];
 
 const hospitalOwners: HospitalOwner[] = [
@@ -188,7 +224,7 @@ const hospitalOwners: HospitalOwner[] = [
     title: "Chairman & Chief Medical Officer",
     image: "doctors/WhatsApp Image 2025-07-04 at 13.08.24_90bd137b.jpg",
     specialization: "Senior pediatrician",
-    experience: "25+ Years",
+    experience: "30+ Years",
     education: "MBBS, MD Cardiology, MBA Healthcare",
     achievements: [
       "MD Director & Senior Pediatrician",
@@ -210,7 +246,7 @@ const hospitalOwners: HospitalOwner[] = [
     image: "/doctors/Madam Photo3.jpg",
     specialization:
       "Dip G.O. NARCHI Director & Consultant gynecologist and obstetrician",
-    experience: "20+ Years",
+    experience: "25+ Years",
     education:
       "MBA Healthcare Management, Post Graduate Diploma in Hospital Administration",
     achievements: [
@@ -270,7 +306,9 @@ export default function About() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Users className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700">50,000+ Patients Served</span>
+                  <span className="text-gray-700">
+                    50,000+ Patients Admitted Till Date.
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -311,7 +349,7 @@ export default function About() {
                   To provide compassionate, high-quality healthcare services
                   that improve the health and well-being of our community. We
                   are committed to clinical excellence, innovation, and treating
-                  every patient with dignity and respect.
+                  every patient at affordable cost with dignity and respect.
                 </p>
               </div>
 
@@ -341,15 +379,6 @@ export default function About() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <Award className="w-6 h-6 text-blue-600 mt-1" />
-                    <div>
-                      <h4 className="font-semibold">Accredited Excellence</h4>
-                      <p className="text-gray-600">
-                        JCI and NABH accredited facility
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
                     <Users className="w-6 h-6 text-blue-600 mt-1" />
                     <div>
                       <h4 className="font-semibold">Expert Medical Team</h4>
@@ -372,6 +401,13 @@ export default function About() {
                     <div>
                       <h4 className="font-semibold">Compassionate Care</h4>
                       <p className="text-gray-600">Patient-centered approach</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Award className="w-6 h-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold">Accredited Excellence</h4>
+                      <p className="text-gray-600">NABH accredited facility</p>
                     </div>
                   </div>
                 </CardContent>
@@ -399,7 +435,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 ">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -408,10 +444,10 @@ export default function About() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+                <Card className="text-center hover:shadow-lg transition-shadow duration-300  h-[23rem]">
                   <CardContent className="p-6">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <value.icon className="w-8 h-8 text-blue-600" />
+                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-blue-600">
+                      {value.title.charAt(0)}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {value.title}
@@ -498,7 +534,7 @@ export default function About() {
             <div className="space-y-16">
               {milestones.map((milestone, index) => (
                 <motion.div
-                  key={milestone.year}
+                  key={milestone.year + index}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -720,7 +756,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-1 max-w-72 items-center gap-6 mx-auto justify-center">
             {accreditations.map((accreditation, index) => (
               <motion.div
                 key={accreditation.code}

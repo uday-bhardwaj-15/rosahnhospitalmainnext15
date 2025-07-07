@@ -50,9 +50,14 @@ export default function Navigation() {
                 height={200}
               />
             </div>
-            <span className="text-xl font-bold text-gray-900">
-              Roshan Hospital
-            </span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-gray-900">
+                Roshan Hospital
+              </span>
+              <span className="text-xs text-red-600 font-semibold -mt-1 ">
+                Since 1998
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
