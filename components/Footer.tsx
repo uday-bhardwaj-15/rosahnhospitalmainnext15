@@ -200,12 +200,12 @@ export default function Footer() {
                   <p className="mt-2">
                     <span className="text-white">Pharmacy:</span>
                     <br />
-                    Mon-Sat: 8AM-8PM
+                    24/7
                   </p>
                   <p className="mt-2">
                     <span className="text-white">Laboratory:</span>
                     <br />
-                    Mon-Sat: 7AM-9PM
+                    Mon-Sat: 8AM-9PM
                   </p>
                 </div>
               </div>

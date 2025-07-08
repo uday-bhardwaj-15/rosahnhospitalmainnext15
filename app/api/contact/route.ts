@@ -70,8 +70,8 @@ export async function POST(req: Request) {
         }</p>
         <p><strong>Sent:</strong> ${new Date().toLocaleString()}</p>
         <hr>
-        <p>If this is an emergency, please call us directly at <strong>+91 9935754963</strong>.</p>
-        <p>📧 Info.belshospital@gmail.com</p>
+        <p>If this is an emergency, please call us directly at <strong>+91 7554261002 </strong>.</p>
+        <p>📧 infoatroshanhospital@gmail.com</p>
         <p style="margin-top:20px;">Best regards,<br>The Support Team</p>
       </div>
     `;
@@ -79,7 +79,7 @@ export async function POST(req: Request) {
     // Send admin email
     const adminInfo = await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_RECEIVER || "Info.belshospital@gmail.com",
+      to: process.env.EMAIL_RECEIVER || "infoatroshanhospital@gmail.com",
       subject: `New Contact: ${subject || reason || "Contact Form"}`,
       html: adminHtmlContent,
       replyTo: email,
