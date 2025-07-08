@@ -1,16 +1,29 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
+// const transporter = nodemailer.createTransport({
+//   host: "smtp.gmail.com",
+//   port: 587,
+//   secure: false,
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASSWORD,
+//   },
+// });
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
+  service: "gmail", // Simplified configuration
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
   },
+  secure: true, // Force TLS
+  tls: {
+    // Required for Vercel's network
+    rejectUnauthorized: false,
+    minVersion: "TLSv1.2",
+  },
+  connectionTimeout: 10000, // 10s timeout
 });
-
 export async function POST(req: Request) {
   try {
     const {
@@ -102,12 +115,17 @@ export async function POST(req: Request) {
       { status: 200 }
     );
   } catch (error) {
-    // console.error("❌ Error sending email:", error);
-    return NextResponse.json(
-      {
-        message: "Failed to send message",
-        error: error instanceof Error ? error.message : "Unknown error",
+    console.error("❌ Vercel Email Error:", {
+      error: error instanceof Error ? error.message : error,
+      env: {
+        user: !!process.env.EMAIL_USER,
+        pass: !!process.env.EMAIL_PASSWORD,
+        receiver: !!process.env.EMAIL_RECEIVER,
       },
+    });
+
+    return NextResponse.json(
+      { message: "Failed to send message" },
       { status: 500 }
     );
   }
