@@ -622,7 +622,7 @@
 
 // export default Gallery;
 "use client";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import {
   X,
   ZoomIn,
@@ -635,6 +635,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { urlFor } from "@/lib/client";
 
 interface GalleryImage {
   id: number;
@@ -960,8 +961,35 @@ const Gallery: React.FC = () => {
   const [displayedCount, setDisplayedCount] = useState(IMAGES_PER_PAGE);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [sanityImages, setSanityImages] = useState<GalleryImage[]>([]);
+
+  useEffect(() => {
+    const fetchSanityImages = async () => {
+      const res = await fetch("/api/gallery", { method: "GET" });
+      const json = await res.json();
+
+      if (json.success) {
+        const fetchedImages: GalleryImage[] = json.data.map(
+          (item: any, i: number) => ({
+            id: 100 + i, // avoid ID collision with local images
+            src: urlFor(item.image).width(800).url(),
+            alt: item.title,
+            category: item.category,
+          })
+        );
+        setSanityImages(fetchedImages);
+      }
+    };
+
+    fetchSanityImages();
+  }, []);
+
   const featuredImage = galleryImages.find((img) => img.featured);
-  const regularImages = galleryImages.filter((img) => !img.featured);
+  // const regularImages = galleryImages.filter((img) => !img.featured);
+  const regularImages = [
+    ...galleryImages.filter((img) => !img.featured),
+    ...sanityImages, // appended after static
+  ];
 
   const filteredImages =
     activeCategory === "All"

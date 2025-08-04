@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Calendar,
   Clock,
@@ -44,7 +44,7 @@ import { Separator } from "@/components/ui/separator";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const doctors = [
+const Staticdoctors = [
   {
     id: 1,
     name: "Dr. Sandesh yadav",
@@ -586,6 +586,51 @@ export default function Doctors() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSpecialty, setSelectedSpecialty] = useState("All Doctors");
   const [sortBy, setSortBy] = useState("name");
+  const [doctors, setDoctors] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchDoctors = async () => {
+      try {
+        const res = await fetch("/api/doctors");
+        const json = await res.json();
+        if (json.success) {
+          const dynamicDoctors = json.data.map((doc: any) => ({
+            id: doc._id,
+            name: doc.name,
+            specialty: doc.specialty,
+            subSpecialty: doc.subSpecialty,
+            image: doc.image?.asset?._ref
+              ? (() => {
+                  const ref = doc.image.asset._ref; // image-<id>-<size>-<ext>
+                  const [, id, dimension, format] = ref.split("-");
+                  return `https://cdn.sanity.io/images/tju5c36x/production/${id}-${dimension}.${format}`;
+                })()
+              : "/default.png",
+
+            rating: doc.rating,
+            reviews: doc.reviews,
+            experience: `${doc.experience} years`,
+            education: doc.education,
+            languages: doc.languages,
+            about: doc.about,
+            achievements: doc.achievements,
+            availability: doc.availability || [],
+            hospital: doc.hospital || "Roshan Hospital",
+            phone: doc.phone || "",
+            email: doc.email || "",
+            consultationFee: doc.consultationFee || "$100",
+          }));
+
+          setDoctors([...Staticdoctors, ...dynamicDoctors]);
+        }
+      } catch (error) {
+        console.error("Failed to fetch doctors from Sanity", error);
+        setDoctors(Staticdoctors); // fallback
+      }
+    };
+
+    fetchDoctors();
+  }, []);
 
   const filteredDoctors = doctors
     .filter((doctor) => {
@@ -702,7 +747,7 @@ export default function Doctors() {
                         <AvatarFallback>
                           {doctor.name
                             .split(" ")
-                            .map((n) => n[0])
+                            .map((n: any) => n[0])
                             .join("")}
                         </AvatarFallback>
                       </Avatar>
@@ -781,7 +826,7 @@ export default function Doctors() {
                                 <AvatarFallback>
                                   {doctor.name
                                     .split(" ")
-                                    .map((n) => n[0])
+                                    .map((n: any) => n[0])
                                     .join("")}
                                 </AvatarFallback>
                               </Avatar>
@@ -839,7 +884,7 @@ export default function Doctors() {
                                   Languages
                                 </h4>
                                 <div className="flex flex-wrap gap-2">
-                                  {doctor.languages.map((language) => (
+                                  {doctor.languages.map((language: any) => (
                                     <Badge key={language} variant="outline">
                                       {language}
                                     </Badge>
@@ -856,17 +901,19 @@ export default function Doctors() {
                                 Achievements
                               </h4>
                               <ul className="space-y-2">
-                                {doctor.achievements.map((achievement, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="flex items-start space-x-2"
-                                  >
-                                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                                    <span className="text-gray-600">
-                                      {achievement}
-                                    </span>
-                                  </li>
-                                ))}
+                                {doctor.achievements.map(
+                                  (achievement: any, idx: any) => (
+                                    <li
+                                      key={idx}
+                                      className="flex items-start space-x-2"
+                                    >
+                                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                                      <span className="text-gray-600">
+                                        {achievement}
+                                      </span>
+                                    </li>
+                                  )
+                                )}
                               </ul>
                             </div>
 

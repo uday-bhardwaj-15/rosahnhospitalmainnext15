@@ -569,7 +569,7 @@ const departments = [
     description:
       "Specialized care for children from birth to adolescence with family-centered approach.",
     icon: Baby,
-    image: "gallery/Pediatrics OPD Director_s.jpg",
+    image: "/gallery/Pediatrics OPD Director_s.jpg",
     head: "Dr. Sarah Johnson",
     doctorCount: 15,
     services: [
